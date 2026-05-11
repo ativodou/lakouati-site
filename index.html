@@ -71,30 +71,41 @@
   .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; color: var(--cream); margin-bottom: 0.75rem; }
   .section-title em { font-style: italic; color: var(--or); }
   .section-sub { font-style: italic; color: var(--cream-dim); font-size: 1.05rem; max-width: 500px; margin: 0 auto; line-height: 1.7; }
-  .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--or-border); border: 1px solid var(--or-border); }
+  .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
   .product-card {
-    background: var(--noir-mid); padding: 2.5rem 2rem;
-    display: flex; flex-direction: column; position: relative;
-    transition: background 0.35s;
-    cursor: default;
+    background: #12100B; border: 1px solid rgba(212,168,67,0.15);
+    display: flex; flex-direction: column; position: relative; overflow: hidden;
+    transition: border-color 0.4s, box-shadow 0.4s;
+  }
+  .product-card:hover {
+    border-color: rgba(212,168,67,0.5);
+    box-shadow: 0 0 40px rgba(212,168,67,0.1), 0 0 80px rgba(212,168,67,0.04);
   }
   .product-card::after {
     content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
-    background: var(--or); transform: scaleX(0); transform-origin: left;
-    transition: transform 0.35s;
+    background: linear-gradient(90deg, transparent, var(--or), transparent);
+    transform: scaleX(0); transform-origin: center; transition: transform 0.5s;
   }
-  .product-card:hover { background: var(--noir-light); }
   .product-card:hover::after { transform: scaleX(1); }
-  .product-num { font-family: 'Bebas Neue', sans-serif; font-size: 0.62rem; letter-spacing: 0.45em; color: var(--or); opacity: 0.5; margin-bottom: 1.25rem; }
-  .product-name-kr { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--cream); line-height: 1.2; margin-bottom: 0.35rem; }
-  .product-name-en { font-size: 0.8rem; letter-spacing: 0.08em; color: var(--cream-dim); margin-bottom: 1.25rem; text-transform: uppercase; font-family: 'Bebas Neue', sans-serif; }
-  .product-desc { font-size: 0.92rem; color: var(--cream-dim); line-height: 1.75; flex: 1; margin-bottom: 1.5rem; }
-  .product-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid var(--or-border); }
-  .product-price { font-family: 'Bebas Neue', sans-serif; font-size: 1.15rem; letter-spacing: 0.1em; color: var(--or); }
-  .product-tag { font-size: 0.65rem; letter-spacing: 0.2em; color: var(--or); opacity: 0.55; font-family: 'Bebas Neue', sans-serif; }
-  .product-brand { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
-  .product-brand img { height: 22px; object-fit: contain; opacity: 0.8; }
-  .product-brand-label { font-family: 'Bebas Neue', sans-serif; font-size: 0.6rem; letter-spacing: 0.4em; color: var(--or); opacity: 0.65; }
+  .card-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 1.5rem; border-bottom: 1px solid rgba(212,168,67,0.1);
+  }
+  .card-brand { display: flex; align-items: center; gap: 0.5rem; }
+  .card-brand img { height: 20px; object-fit: contain; opacity: 0.75; }
+  .card-brand-name { font-family: 'Bebas Neue', sans-serif; font-size: 0.58rem; letter-spacing: 0.4em; color: var(--or); opacity: 0.7; }
+  .card-num { font-family: 'Bebas Neue', sans-serif; font-size: 0.6rem; letter-spacing: 0.3em; color: var(--cream-faint); }
+  .card-body { padding: 2rem 1.5rem; flex: 1; display: flex; flex-direction: column; }
+  .card-symbol { font-size: 2rem; margin-bottom: 1.25rem; display: block; color: var(--or); opacity: 0.5; line-height: 1; }
+  .product-name-kr { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--cream); line-height: 1.15; margin-bottom: 0.3rem; }
+  .product-name-en { font-family: 'Bebas Neue', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; color: var(--cream-dim); margin-bottom: 1.25rem; }
+  .product-desc { font-size: 0.92rem; color: var(--cream-dim); line-height: 1.8; flex: 1; }
+  .card-footer {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 1.5rem; border-top: 1px solid rgba(212,168,67,0.1);
+  }
+  .product-price { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 0.1em; color: var(--or); }
+  .product-tag { font-size: 0.6rem; letter-spacing: 0.25em; color: var(--or); opacity: 0.5; font-family: 'Bebas Neue', sans-serif; }
 
   /* ABOUT */
   .about-section {
@@ -196,66 +207,97 @@
     </div>
     <div class="products-grid">
       <div class="product-card">
-        <span class="product-num">01 · Lwil Beni</span>
-        <div class="product-brand"><img src="images/bitasyon.png" alt="Bitasyon"><span class="product-brand-label">Bitasyon</span></div>
-        <div class="product-name-kr">Lwil Beni</div>
-        <div class="product-name-en">Blessed Sacred Oils</div>
-        <p class="product-desc">Spiritually infused botanical oils for protection, healing, and ritual work. Each bottle personally blessed by the Ati National before shipment.</p>
-        <div class="product-footer">
+        <div class="card-header">
+          <div class="card-brand"><img src="images/bitasyon.png" alt="Bitasyon"><span class="card-brand-name">Bitasyon</span></div>
+          <span class="card-num">01</span>
+        </div>
+        <div class="card-body">
+          <span class="card-symbol">◉</span>
+          <div class="product-name-kr">Lwil Beni</div>
+          <div class="product-name-en">Blessed Sacred Oils</div>
+          <p class="product-desc">Spiritually infused botanical oils for protection, healing, and ritual work. Each bottle personally blessed by the Ati National before shipment.</p>
+        </div>
+        <div class="card-footer">
           <span class="product-price">From $18.99</span>
           <span class="product-tag">✦ Blessed</span>
         </div>
       </div>
       <div class="product-card">
-        <span class="product-num">02 · Dlo Espirityèl</span>
-        <div class="product-brand"><img src="images/bitasyon.png" alt="Bitasyon"><span class="product-brand-label">Bitasyon</span></div>
-        <div class="product-name-kr">Dlo Espirityèl</div>
-        <div class="product-name-en">Spiritual Waters</div>
-        <p class="product-desc">Sacred waters for cleansing ceremonies, altar offerings, and spiritual baths. Blessed and consecrated with intention and prayer.</p>
-        <div class="product-footer">
+        <div class="card-header">
+          <div class="card-brand"><img src="images/bitasyon.png" alt="Bitasyon"><span class="card-brand-name">Bitasyon</span></div>
+          <span class="card-num">02</span>
+        </div>
+        <div class="card-body">
+          <span class="card-symbol">≋</span>
+          <div class="product-name-kr">Dlo Espirityèl</div>
+          <div class="product-name-en">Spiritual Waters</div>
+          <p class="product-desc">Sacred waters for cleansing ceremonies, altar offerings, and spiritual baths. Blessed and consecrated with intention and prayer.</p>
+        </div>
+        <div class="card-footer">
           <span class="product-price">From $16.99</span>
           <span class="product-tag">✦ Blessed</span>
         </div>
       </div>
       <div class="product-card">
-        <span class="product-num">03 · Bougies Beni</span>
-        <div class="product-brand"><img src="images/bitasyon.png" alt="Bitasyon"><span class="product-brand-label">Bitasyon</span></div>
-        <div class="product-name-kr">Bougies Beni</div>
-        <div class="product-name-en">Blessed Candles</div>
-        <p class="product-desc">Ceremonial candles for prayer, meditation, and spiritual work. Blessed before packaging — each flame carries the Ati's intention.</p>
-        <div class="product-footer">
+        <div class="card-header">
+          <div class="card-brand"><img src="images/bitasyon.png" alt="Bitasyon"><span class="card-brand-name">Bitasyon</span></div>
+          <span class="card-num">03</span>
+        </div>
+        <div class="card-body">
+          <span class="card-symbol">△</span>
+          <div class="product-name-kr">Bougies Beni</div>
+          <div class="product-name-en">Blessed Candles</div>
+          <p class="product-desc">Ceremonial candles for prayer, meditation, and spiritual work. Blessed before packaging — each flame carries the Ati's intention.</p>
+        </div>
+        <div class="card-footer">
           <span class="product-price">From $14.99</span>
           <span class="product-tag">✦ Blessed</span>
         </div>
       </div>
       <div class="product-card">
-        <span class="product-num">04 · Pafen Sakre</span>
-        <div class="product-brand"><img src="images/bitasyon.png" alt="Bitasyon"><span class="product-brand-label">Bitasyon</span></div>
-        <div class="product-name-kr">Pafen Sakre</div>
-        <div class="product-name-en">Sacred Perfumes</div>
-        <p class="product-desc">Ritual fragrances crafted from Haitian botanical ingredients. Worn for spiritual protection, attraction, and ceremonial purposes.</p>
-        <div class="product-footer">
+        <div class="card-header">
+          <div class="card-brand"><img src="images/bitasyon.png" alt="Bitasyon"><span class="card-brand-name">Bitasyon</span></div>
+          <span class="card-num">04</span>
+        </div>
+        <div class="card-body">
+          <span class="card-symbol">✿</span>
+          <div class="product-name-kr">Pafen Sakre</div>
+          <div class="product-name-en">Sacred Perfumes</div>
+          <p class="product-desc">Ritual fragrances crafted from Haitian botanical ingredients. Worn for spiritual protection, attraction, and ceremonial purposes.</p>
+        </div>
+        <div class="card-footer">
           <span class="product-price">From $22.99</span>
           <span class="product-tag">✦ Blessed</span>
         </div>
       </div>
       <div class="product-card">
-        <span class="product-num">05 · Fishu ak Foulà</span>
-        <div class="product-name-kr">Fishu ak Foulà</div>
-        <div class="product-name-en">Ceremonial Wraps</div>
-        <p class="product-desc">Traditional Haitian ceremonial head wraps and sashes worn in Vodou rituals, celebrations, and sacred dress. Handcrafted and blessed.</p>
-        <div class="product-footer">
+        <div class="card-header">
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:0.58rem;letter-spacing:0.4em;color:var(--or);opacity:0.4;">Lakou Ati</span>
+          <span class="card-num">05</span>
+        </div>
+        <div class="card-body">
+          <span class="card-symbol">✦</span>
+          <div class="product-name-kr">Fishu ak Foulà</div>
+          <div class="product-name-en">Ceremonial Wraps</div>
+          <p class="product-desc">Traditional Haitian ceremonial head wraps and sashes worn in Vodou rituals, celebrations, and sacred dress. Handcrafted and blessed.</p>
+        </div>
+        <div class="card-footer">
           <span class="product-price">From $29.99</span>
           <span class="product-tag">✦ Blessed</span>
         </div>
       </div>
       <div class="product-card">
-        <span class="product-num">06 · Papye Pou Priye</span>
-        <div class="product-brand"><img src="images/bitasyon.png" alt="Bitasyon"><span class="product-brand-label">Bitasyon</span></div>
-        <div class="product-name-kr">Papye Pou Priye</div>
-        <div class="product-name-en">Prayer & Wishing Paper</div>
-        <p class="product-desc">Sacred paper for writing prayers, intentions, and wishes. Used in altars, flame ceremonies, and offerings to the Lwa. Blessed before sealing.</p>
-        <div class="product-footer">
+        <div class="card-header">
+          <div class="card-brand"><img src="images/bitasyon.png" alt="Bitasyon"><span class="card-brand-name">Bitasyon</span></div>
+          <span class="card-num">06</span>
+        </div>
+        <div class="card-body">
+          <span class="card-symbol">✎</span>
+          <div class="product-name-kr">Papye Pou Priye</div>
+          <div class="product-name-en">Prayer & Wishing Paper</div>
+          <p class="product-desc">Sacred paper for writing prayers, intentions, and wishes. Used in altars, flame ceremonies, and offerings to the Lwa. Blessed before sealing.</p>
+        </div>
+        <div class="card-footer">
           <span class="product-price">From $9.99</span>
           <span class="product-tag">✦ Blessed</span>
         </div>
