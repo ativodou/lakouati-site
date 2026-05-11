@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Lakou Ati — Sacred Haitian spiritual products personally blessed by Carl Henry Desmornes, Ati National of Haiti.">
+<meta property="og:title" content="Lakou Ati — Sacred Haitian Spiritual Goods">
+<meta property="og:description" content="Every product personally blessed by the Ati National of Haiti. No other brand in the world can offer this.">
+<meta property="og:image" content="https://lakouati.com/images/lakou-ati-logo.png">
+<title>Lakou Ati — Sacred Haitian Spiritual Goods</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --noir: #0D0807;
+    --noir-mid: #1A1208;
+    --noir-light: #2C1E0E;
+    --or: #D4A843;
+    --or-light: #F0C866;
+    --or-pale: rgba(212,168,67,0.07);
+    --or-border: rgba(212,168,67,0.2);
+    --cream: #FDF8F0;
+    --cream-dim: rgba(253,248,240,0.6);
+    --cream-faint: rgba(253,248,240,0.15);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--noir); color: var(--cream); font-family: 'Cormorant Garamond', serif; overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between;
+    background: rgba(13,8,7,0.94); backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--or-border);
+  }
+  .nav-brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+  .nav-logo-img { height: 34px; object-fit: contain; opacity: 0.9; }
+  .nav-brand-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.05rem; color: var(--or); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-family: 'Bebas Neue', sans-serif; font-size: 0.75rem; letter-spacing: 0.3em; color: var(--cream-dim); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--or); }
+  .nav-cta { font-family: 'Bebas Neue', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; padding: 0.55rem 1.5rem; border: 1px solid var(--or-border); color: var(--or); text-decoration: none; transition: all 0.3s; }
+  .nav-cta:hover { background: var(--or); color: var(--noir); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 8rem 2rem 6rem; position: relative;
+    background:
+      radial-gradient(ellipse at 50% 70%, rgba(212,168,67,0.05) 0%, transparent 65%),
+      radial-gradient(ellipse at 20% 20%, rgba(212,168,67,0.03) 0%, transparent 50%);
+  }
+  .hero::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--or), transparent);
+  }
+  .hero-symbol { font-size: 2rem; margin-bottom: 2rem; color: var(--or); opacity: 0.5; letter-spacing: 0.5em; font-family: 'Bebas Neue', sans-serif; }
+  .hero-eyebrow { font-family: 'Bebas Neue', sans-serif; font-size: 0.65rem; letter-spacing: 0.6em; color: var(--or); margin-bottom: 2rem; }
+  .hero-title { font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(3.5rem, 11vw, 9rem); line-height: 0.88; color: var(--cream); margin-bottom: 0.5rem; }
+  .hero-title em { font-style: italic; color: var(--or); display: block; }
+  .hero-rule { width: 50px; height: 1px; background: var(--or); margin: 2.5rem auto; opacity: 0.4; }
+  .hero-sub { font-style: italic; font-size: clamp(1rem, 1.8vw, 1.25rem); color: var(--cream-dim); max-width: 540px; line-height: 1.85; }
+  .hero-sub strong { color: var(--or-light); font-style: normal; }
+  .hero-scroll { position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%); font-family: 'Bebas Neue', sans-serif; font-size: 0.62rem; letter-spacing: 0.45em; color: var(--cream-faint); }
+
+  /* PRODUCTS */
+  .products-section { padding: 8rem 4rem; }
+  .products-inner { max-width: 1200px; margin: 0 auto; }
+  .section-header { text-align: center; margin-bottom: 5rem; }
+  .section-eyebrow { font-family: 'Bebas Neue', sans-serif; font-size: 0.65rem; letter-spacing: 0.55em; color: var(--or); display: block; margin-bottom: 1rem; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; color: var(--cream); margin-bottom: 0.75rem; }
+  .section-title em { font-style: italic; color: var(--or); }
+  .section-sub { font-style: italic; color: var(--cream-dim); font-size: 1.05rem; max-width: 500px; margin: 0 auto; line-height: 1.7; }
+  .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--or-border); border: 1px solid var(--or-border); }
+  .product-card {
+    background: var(--noir-mid); padding: 2.5rem 2rem;
+    display: flex; flex-direction: column; position: relative;
+    transition: background 0.35s;
+    cursor: default;
+  }
+  .product-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+    background: var(--or); transform: scaleX(0); transform-origin: left;
+    transition: transform 0.35s;
+  }
+  .product-card:hover { background: var(--noir-light); }
+  .product-card:hover::after { transform: scaleX(1); }
+  .product-num { font-family: 'Bebas Neue', sans-serif; font-size: 0.62rem; letter-spacing: 0.45em; color: var(--or); opacity: 0.5; margin-bottom: 1.25rem; }
+  .product-name-kr { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--cream); line-height: 1.2; margin-bottom: 0.35rem; }
+  .product-name-en { font-size: 0.8rem; letter-spacing: 0.08em; color: var(--cream-dim); margin-bottom: 1.25rem; text-transform: uppercase; font-family: 'Bebas Neue', sans-serif; }
+  .product-desc { font-size: 0.92rem; color: var(--cream-dim); line-height: 1.75; flex: 1; margin-bottom: 1.5rem; }
+  .product-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid var(--or-border); }
+  .product-price { font-family: 'Bebas Neue', sans-serif; font-size: 1.15rem; letter-spacing: 0.1em; color: var(--or); }
+  .product-tag { font-size: 0.65rem; letter-spacing: 0.2em; color: var(--or); opacity: 0.55; font-family: 'Bebas Neue', sans-serif; }
+
+  /* ABOUT */
+  .about-section {
+    padding: 8rem 4rem;
+    background: var(--noir-mid);
+    border-top: 1px solid var(--or-border);
+    border-bottom: 1px solid var(--or-border);
+  }
+  .about-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+  .about-eyebrow { font-family: 'Bebas Neue', sans-serif; font-size: 0.65rem; letter-spacing: 0.55em; color: var(--or); display: block; margin-bottom: 1rem; }
+  .about-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; color: var(--cream); margin-bottom: 1.5rem; line-height: 1.1; }
+  .about-title em { font-style: italic; color: var(--or); }
+  .about-body { font-size: 1rem; line-height: 1.9; color: var(--cream-dim); margin-bottom: 2rem; }
+  .about-quote { border-left: 2px solid var(--or); padding-left: 1.5rem; margin: 0; }
+  .about-quote p { font-style: italic; font-size: 1.1rem; color: var(--cream); line-height: 1.75; }
+  .about-quote cite { display: block; font-size: 0.68rem; letter-spacing: 0.2em; color: var(--or); margin-top: 1rem; font-style: normal; font-family: 'Bebas Neue', sans-serif; }
+  .about-facts { display: flex; flex-direction: column; gap: 1.25rem; }
+  .about-fact { padding: 1.5rem; border: 1px solid var(--or-border); background: var(--or-pale); }
+  .about-fact-label { font-family: 'Bebas Neue', sans-serif; font-size: 0.62rem; letter-spacing: 0.4em; color: var(--or); margin-bottom: 0.6rem; display: block; }
+  .about-fact-text { font-size: 0.9rem; color: var(--cream-dim); line-height: 1.65; }
+
+  /* CTA */
+  .cta-section { padding: 7rem 4rem; text-align: center; position: relative; overflow: hidden; }
+  .cta-section::before {
+    content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 1px; height: 4rem; background: linear-gradient(to bottom, transparent, var(--or));
+  }
+  .cta-eyebrow { font-family: 'Bebas Neue', sans-serif; font-size: 0.65rem; letter-spacing: 0.5em; color: var(--or); margin-bottom: 1.5rem; display: block; }
+  .cta-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; color: var(--cream); margin-bottom: 1rem; }
+  .cta-sub { color: var(--cream-dim); font-size: 1rem; margin-bottom: 3rem; max-width: 440px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+  .btn-gold { display: inline-block; font-family: 'Bebas Neue', sans-serif; font-size: 0.88rem; letter-spacing: 0.25em; padding: 1.1rem 3rem; background: var(--or); color: var(--noir); text-decoration: none; transition: all 0.3s; border: 2px solid var(--or); }
+  .btn-gold:hover { background: transparent; color: var(--or); }
+  .btn-ghost { display: inline-block; font-family: 'Bebas Neue', sans-serif; font-size: 0.88rem; letter-spacing: 0.25em; padding: 1.1rem 3rem; border: 2px solid var(--or-border); color: var(--cream-dim); text-decoration: none; transition: all 0.3s; margin-left: 1rem; }
+  .btn-ghost:hover { border-color: var(--or); color: var(--or); }
+
+  /* FOOTER */
+  footer { border-top: 1px solid var(--or-border); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .footer-brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1rem; color: var(--or); }
+  footer p { font-size: 0.72rem; color: var(--cream-faint); letter-spacing: 0.08em; }
+
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 0.5rem; }
+  .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--or); }
+
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-cta { display: none; }
+    .nav-hamburger { display: flex; }
+    .nav-links { display: none; }
+    .nav-links.open { display: flex; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: var(--noir-mid); border-bottom: 1px solid var(--or-border); padding: 0.5rem 0; gap: 0; }
+    .nav-links.open a { display: block; padding: 0.85rem 1.5rem; border-bottom: 1px solid rgba(212,168,67,0.05); }
+    .products-section { padding: 5rem 1.5rem; }
+    .products-grid { grid-template-columns: 1fr; }
+    .about-section { padding: 5rem 1.5rem; }
+    .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .cta-section { padding: 5rem 1.5rem; }
+    .btn-ghost { margin-left: 0; margin-top: 1rem; display: block; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-brand">
+    <img src="images/lakou-ati-logo.png" alt="Lakou Ati" class="nav-logo-img">
+    <span class="nav-brand-name">Lakou Ati</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#about">The Blessing</a></li>
+    <li><a href="#order">Order</a></li>
+  </ul>
+  <a href="mailto:contact@lakouati.com" class="nav-cta">Order Now</a>
+  <button class="nav-hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-symbol">✦ &nbsp; ✦ &nbsp; ✦</div>
+  <div class="hero-eyebrow">Lakou Ati · The Sacred Yard · Pembroke Pines, FL</div>
+  <h1 class="hero-title">
+    The Sacred
+    <em>Yard</em>
+  </h1>
+  <div class="hero-rule"></div>
+  <p class="hero-sub">Every product personally blessed by <strong>Carl Henry Desmornes</strong>, Ati National of Haiti — the highest spiritual authority in the Haitian Vodou tradition. No other brand in the world can offer this.</p>
+  <span class="hero-scroll">✦ &nbsp; Blessed Before Every Shipment · Delivered Worldwide &nbsp; ✦</span>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products-section" id="products">
+  <div class="products-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">Sacred Collection · Six Products</span>
+      <h2 class="section-title">Blessed <em>Goods</em></h2>
+      <p class="section-sub">Each item carries the personal blessing of the Ati National — a sacred ceremony performed before every shipment.</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <span class="product-num">01 · Lwil Beni</span>
+        <div class="product-name-kr">Lwil Beni</div>
+        <div class="product-name-en">Blessed Sacred Oils</div>
+        <p class="product-desc">Spiritually infused botanical oils for protection, healing, and ritual work. Each bottle personally blessed by the Ati National before shipment.</p>
+        <div class="product-footer">
+          <span class="product-price">From $18.99</span>
+          <span class="product-tag">✦ Blessed</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <span class="product-num">02 · Dlo Espirityèl</span>
+        <div class="product-name-kr">Dlo Espirityèl</div>
+        <div class="product-name-en">Spiritual Waters</div>
+        <p class="product-desc">Sacred waters for cleansing ceremonies, altar offerings, and spiritual baths. Blessed and consecrated with intention and prayer.</p>
+        <div class="product-footer">
+          <span class="product-price">From $16.99</span>
+          <span class="product-tag">✦ Blessed</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <span class="product-num">03 · Bougies Beni</span>
+        <div class="product-name-kr">Bougies Beni</div>
+        <div class="product-name-en">Blessed Candles</div>
+        <p class="product-desc">Ceremonial candles for prayer, meditation, and spiritual work. Blessed before packaging — each flame carries the Ati's intention.</p>
+        <div class="product-footer">
+          <span class="product-price">From $14.99</span>
+          <span class="product-tag">✦ Blessed</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <span class="product-num">04 · Pafen Sakre</span>
+        <div class="product-name-kr">Pafen Sakre</div>
+        <div class="product-name-en">Sacred Perfumes</div>
+        <p class="product-desc">Ritual fragrances crafted from Haitian botanical ingredients. Worn for spiritual protection, attraction, and ceremonial purposes.</p>
+        <div class="product-footer">
+          <span class="product-price">From $22.99</span>
+          <span class="product-tag">✦ Blessed</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <span class="product-num">05 · Fishu ak Foulà</span>
+        <div class="product-name-kr">Fishu ak Foulà</div>
+        <div class="product-name-en">Ceremonial Wraps</div>
+        <p class="product-desc">Traditional Haitian ceremonial head wraps and sashes worn in Vodou rituals, celebrations, and sacred dress. Handcrafted and blessed.</p>
+        <div class="product-footer">
+          <span class="product-price">From $29.99</span>
+          <span class="product-tag">✦ Blessed</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <span class="product-num">06 · Papye Pou Priye</span>
+        <div class="product-name-kr">Papye Pou Priye</div>
+        <div class="product-name-en">Prayer & Wishing Paper</div>
+        <p class="product-desc">Sacred paper for writing prayers, intentions, and wishes. Used in altars, flame ceremonies, and offerings to the Lwa. Blessed before sealing.</p>
+        <div class="product-footer">
+          <span class="product-price">From $9.99</span>
+          <span class="product-tag">✦ Blessed</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="about-inner">
+    <div>
+      <span class="about-eyebrow">Carl Henry Desmornes · Ati National of Haiti</span>
+      <h2 class="about-title">The <em>Blessing</em></h2>
+      <p class="about-body">Carl Henry Desmornes holds the title of Ati National of Haiti — the supreme spiritual authority of the Haitian Vodou tradition. No other living person holds this position. Every Lakou Ati product is personally blessed in a sacred ceremony before it is packaged and shipped.</p>
+      <div class="about-quote">
+        <p>"This blessing is not a ritual performed in bulk. Each product passes through my hands, my prayers, my intention. It carries that with it — wherever it goes in the world."</p>
+        <cite>— Carl Henry Desmornes, Ati National of Haiti</cite>
+      </div>
+    </div>
+    <div class="about-facts">
+      <div class="about-fact">
+        <span class="about-fact-label">Unmatched Authority</span>
+        <p class="about-fact-text">The Ati National is the highest-ranking spiritual leader in Haitian Vodou. No competitor anywhere in the world can offer products blessed at this level.</p>
+      </div>
+      <div class="about-fact">
+        <span class="about-fact-label">A Sacred Ceremony</span>
+        <p class="about-fact-text">Each blessing is a genuine spiritual act — not a marketing claim. Every product is handled personally by the Ati National before shipment.</p>
+      </div>
+      <div class="about-fact">
+        <span class="about-fact-label">Global Distribution</span>
+        <p class="about-fact-text">Shipped from Miami to the Haitian diaspora worldwide. Physical distribution across Haiti through our partnership with Ramada SA.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER CTA -->
+<section class="cta-section" id="order">
+  <span class="cta-eyebrow">Ready to order?</span>
+  <h2 class="cta-title">Carry the Blessing</h2>
+  <p class="cta-sub">Contact us to place an order, ask about bulk pricing, or learn more about any product in our sacred collection.</p>
+  <a href="mailto:contact@lakouati.com" class="btn-gold">Order via Email</a>
+  <a href="https://lavimiyo.com/store" class="btn-ghost">All Three Brands</a>
+</section>
+
+<footer>
+  <span class="footer-brand">Lakou Ati</span>
+  <p>© 2025 LavimiyòLLC · Pembroke Pines, FL · contact@lakouati.com</p>
+</footer>
+
+<script>
+  document.querySelector('.nav-hamburger').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('open');
+  });
+</script>
+</body>
+</html>
