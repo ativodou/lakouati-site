@@ -529,12 +529,12 @@ function renderProducts() {
     const badgeMap = {'new':'badge-new','hot':'badge-hot','bs':'badge-bs'};
     const badgeLabel = p.badge ? `<div class="product-badge ${badgeMap[p.badge]||''}">${t('badge.'+p.badge)}</div>` : '';
     const brandTag = p.brand === 'bitasyon'
-      ? `<div class="product-brand-row"><img src="images/bitasyon.png" style="height:44px;object-fit:contain;opacity:1;border-radius:3px;"><span class="product-brand-tag">Bitasyon</span></div>`
+      ? `<div class="product-brand-row"><img src="images/bitasyon-logo.png" style="height:44px;object-fit:contain;opacity:1;border-radius:3px;"><span class="product-brand-tag">Bitasyon</span></div>`
       : `<div class="product-brand-row"><img src="images/lakou-ati-logo.png" style="height:24px;object-fit:contain;opacity:0.7;filter:brightness(0) invert(1);"><span class="product-brand-tag">Lakou Ati</span></div>`;
     return `<div class="product-card">
       <div class="product-img">
         <span class="product-img-symbol">${p.symbol}</span>
-        ${p.brand==='bitasyon'?'<img class="product-img-brand" src="images/bitasyon.png" alt="Bitasyon">':'<img class="product-img-brand" src="images/lakou-ati-logo.png" alt="Lakou Ati">'}
+        ${p.brand==='bitasyon'?'<img class="product-img-brand" src="images/bitasyon-logo.png" alt="Bitasyon">':'<img class="product-img-brand" src="images/lakou-ati-logo.png" alt="Lakou Ati">'}
         ${badgeLabel}
       </div>
       <div class="product-body">
