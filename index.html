@@ -639,7 +639,7 @@ function toggleMobileMenu() {
   document.getElementById('hamburger').classList.toggle('open');
 }
 
-document.addEventListener('DOMContentLoaded', () => { setLang('ht'); });
+document.addEventListener('DOMContentLoaded', () => { setLang('ht'); updateCartUI(); });
 
 async function startCheckout() {
   const btn = document.getElementById('checkout-btn-el');
