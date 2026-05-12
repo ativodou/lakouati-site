@@ -3,356 +3,633 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Lakou Ati — Sacred Haitian spiritual products personally blessed by Carl Henry Desmornes, Ati National of Haiti.">
-<meta property="og:title" content="Lakou Ati — Sacred Haitian Spiritual Goods">
-<meta property="og:description" content="Every product personally blessed by the Ati National of Haiti. No other brand in the world can offer this.">
-<meta property="og:image" content="https://lakouati.com/images/lakou-ati-logo.png">
-<title>Lakou Ati — Sacred Haitian Spiritual Goods</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+<meta name="description" content="Lakou Ati — Pwodwi Espirityèl Sakre / Sacred Haitian Spiritual Goods — Blessed by the Ati National">
+<title>Lakou Ati — Pwodwi Espirityèl Sakre</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --noir: #0D0807;
-    --noir-mid: #1A1208;
-    --noir-light: #2C1E0E;
-    --or: #D4A843;
-    --or-light: #F0C866;
-    --or-pale: rgba(212,168,67,0.07);
-    --or-border: rgba(212,168,67,0.2);
-    --cream: #FDF8F0;
-    --cream-dim: rgba(253,248,240,0.6);
-    --cream-faint: rgba(253,248,240,0.15);
-  }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { background: var(--noir); color: var(--cream); font-family: 'Cormorant Garamond', serif; overflow-x: hidden; }
-
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between;
-    background: rgba(13,8,7,0.94); backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--or-border);
+  :root {
+    --noir: #0D0807; --noir-mid: #1A1208; --noir-light: #2C1E0E;
+    --or: #D4A843; --or-light: #F0C866; --or-pale: #2A2010;
+    --cream: #FDF8F0; --cream-dim: rgba(253,248,240,0.65); --cream-faint: rgba(253,248,240,0.2);
+    --or-border: rgba(212,168,67,0.2); --or-glow: rgba(212,168,67,0.12);
   }
-  .nav-brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-  .nav-logo-img { height: 34px; object-fit: contain; opacity: 0.9; }
-  .nav-brand-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.05rem; color: var(--or); }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a { font-family: 'Bebas Neue', sans-serif; font-size: 0.75rem; letter-spacing: 0.3em; color: var(--cream-dim); text-decoration: none; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--or); }
-  .nav-cta { font-family: 'Bebas Neue', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; padding: 0.55rem 1.5rem; border: 1px solid var(--or-border); color: var(--or); text-decoration: none; transition: all 0.3s; }
-  .nav-cta:hover { background: var(--or); color: var(--noir); }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Jost', sans-serif; background: var(--noir); color: var(--cream); min-height: 100vh; overflow-x: hidden; }
+
+  /* TOP BAR */
+  .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 110; height: 34px; background: #0A0604; display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; border-bottom: 1px solid var(--or-border); }
+  .topbar-tagline { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(212,168,67,0.45); }
+  .lang-toggle { display: flex; align-items: center; background: rgba(212,168,67,0.07); border-radius: 2rem; border: 1px solid var(--or-border); overflow: hidden; }
+  .lang-btn { padding: 0.25rem 0.8rem; cursor: pointer; border: none; background: none; color: rgba(253,248,240,0.4); font-family: 'Jost', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; transition: background 0.2s, color 0.2s; }
+  .lang-btn.active { background: var(--or); color: var(--noir); border-radius: 2rem; }
+
+  /* HEADER */
+  header { position: fixed; top: 34px; left: 0; right: 0; z-index: 100; height: 110px; background: var(--noir-mid); border-bottom: 2px solid var(--or); display: grid; grid-template-columns: 160px 1fr 260px; }
+  .header-logo-slot { display: flex; align-items: center; justify-content: center; padding: 1rem; }
+  .header-logo-img { height: 78px; object-fit: contain; }
+  .header-brand { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 2rem; }
+  .header-site-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; line-height: 1; color: var(--cream); letter-spacing: 0.04em; }
+  .header-site-name span { color: var(--or); font-style: italic; }
+  .header-nav-links { display: flex; gap: 2rem; list-style: none; }
+  .header-nav-links a { text-decoration: none; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cream-dim); transition: color 0.2s; }
+  .header-nav-links a:hover { color: var(--or); }
+  .header-actions { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.85rem; padding: 1rem 2rem; }
+  .cart-btn { background: var(--or); color: var(--noir); border: none; border-radius: 2rem; padding: 0.6rem 1.5rem; font-family: 'Jost', sans-serif; font-size: 0.76rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; display: flex; align-items: center; gap: 0.5rem; }
+  .cart-btn:hover { background: var(--or-light); transform: translateY(-1px); }
+  .cart-count { background: var(--noir); color: var(--or); border-radius: 50%; width: 18px; height: 18px; font-size: 0.65rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .header-spacer { height: 144px; }
+
+  /* STRIP */
+  .strip { background: var(--or); padding: 0.5rem 0; overflow: hidden; white-space: nowrap; }
+  .strip-inner { display: inline-block; animation: marquee 28s linear infinite; }
+  .strip-inner span { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--noir); padding: 0 2rem; }
 
   /* HERO */
-  .hero {
-    min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
-    text-align: center; padding: 8rem 2rem 6rem; position: relative;
-    background:
-      radial-gradient(ellipse at 50% 70%, rgba(212,168,67,0.05) 0%, transparent 65%),
-      radial-gradient(ellipse at 20% 20%, rgba(212,168,67,0.03) 0%, transparent 50%);
-  }
-  .hero::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-    background: linear-gradient(90deg, transparent, var(--or), transparent);
-  }
-  .hero-symbol { font-size: 2rem; margin-bottom: 2rem; color: var(--or); opacity: 0.5; letter-spacing: 0.5em; font-family: 'Bebas Neue', sans-serif; }
-  .hero-eyebrow { font-family: 'Bebas Neue', sans-serif; font-size: 0.65rem; letter-spacing: 0.6em; color: var(--or); margin-bottom: 2rem; }
-  .hero-title { font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(3.5rem, 11vw, 9rem); line-height: 0.88; color: var(--cream); margin-bottom: 0.5rem; }
+  .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 85vh; }
+  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 5rem; background: radial-gradient(ellipse at 30% 50%, rgba(212,168,67,0.06) 0%, transparent 70%); }
+  .hero-kicker { font-size: 0.65rem; letter-spacing: 0.45em; text-transform: uppercase; color: var(--or); margin-bottom: 1.5rem; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 700; line-height: 0.95; color: var(--cream); margin-bottom: 1.5rem; }
   .hero-title em { font-style: italic; color: var(--or); display: block; }
-  .hero-rule { width: 50px; height: 1px; background: var(--or); margin: 2.5rem auto; opacity: 0.4; }
-  .hero-sub { font-style: italic; font-size: clamp(1rem, 1.8vw, 1.25rem); color: var(--cream-dim); max-width: 540px; line-height: 1.85; }
-  .hero-sub strong { color: var(--or-light); font-style: normal; }
-  .hero-scroll { position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%); font-family: 'Bebas Neue', sans-serif; font-size: 0.62rem; letter-spacing: 0.45em; color: var(--cream-faint); }
+  .hero-desc { font-size: 0.95rem; font-weight: 300; color: var(--cream-dim); line-height: 1.85; margin-bottom: 2.5rem; max-width: 420px; }
+  .hero-cta { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--or); color: var(--noir); border: none; border-radius: 2rem; padding: 0.85rem 2rem; font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; }
+  .hero-cta:hover { background: var(--or-light); transform: translateY(-2px); }
+  .hero-right { display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 1fr); }
+  .product-tile { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; cursor: pointer; transition: background 0.25s; border: 1px solid rgba(212,168,67,0.08); }
+  .product-tile:hover { background: rgba(212,168,67,0.06); }
+  .tile-symbol { font-size: 2.5rem; color: var(--or); opacity: 0.6; }
+  .tile-name { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; font-weight: 700; color: var(--cream); text-align: center; }
+  .tile-sub { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(212,168,67,0.55); text-align: center; }
 
   /* PRODUCTS */
-  .products-section { padding: 8rem 4rem; }
-  .products-inner { max-width: 1200px; margin: 0 auto; }
-  .section-header { text-align: center; margin-bottom: 5rem; }
-  .section-eyebrow { font-family: 'Bebas Neue', sans-serif; font-size: 0.65rem; letter-spacing: 0.55em; color: var(--or); display: block; margin-bottom: 1rem; }
-  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; color: var(--cream); margin-bottom: 0.75rem; }
-  .section-title em { font-style: italic; color: var(--or); }
-  .section-sub { font-style: italic; color: var(--cream-dim); font-size: 1.05rem; max-width: 500px; margin: 0 auto; line-height: 1.7; }
-  .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-  .product-card {
-    background: #12100B; border: 1px solid rgba(212,168,67,0.15);
-    display: flex; flex-direction: column; position: relative; overflow: hidden;
-    transition: border-color 0.4s, box-shadow 0.4s;
-  }
-  .product-card:hover {
-    border-color: rgba(212,168,67,0.5);
-    box-shadow: 0 0 40px rgba(212,168,67,0.1), 0 0 80px rgba(212,168,67,0.04);
-  }
-  .product-card::after {
-    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
-    background: linear-gradient(90deg, transparent, var(--or), transparent);
-    transform: scaleX(0); transform-origin: center; transition: transform 0.5s;
-  }
-  .product-card:hover::after { transform: scaleX(1); }
-  .card-header {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 1rem 1.5rem; border-bottom: 1px solid rgba(212,168,67,0.1);
-  }
-  .card-brand { display: flex; align-items: center; gap: 0.5rem; }
-  .card-brand img { height: 44px; object-fit: contain; opacity: 0.9; }
-  .card-brand-name { font-family: 'Bebas Neue', sans-serif; font-size: 0.58rem; letter-spacing: 0.4em; color: var(--or); opacity: 0.7; }
-  .card-num { font-family: 'Bebas Neue', sans-serif; font-size: 0.6rem; letter-spacing: 0.3em; color: var(--cream-faint); }
-  .card-body { padding: 2rem 1.5rem; flex: 1; display: flex; flex-direction: column; }
-  .card-symbol { font-size: 2rem; margin-bottom: 1.25rem; display: block; color: var(--or); opacity: 0.5; line-height: 1; }
-  .product-name-kr { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--cream); line-height: 1.15; margin-bottom: 0.3rem; }
-  .product-name-en { font-family: 'Bebas Neue', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; color: var(--cream-dim); margin-bottom: 1.25rem; }
-  .product-desc { font-size: 0.92rem; color: var(--cream-dim); line-height: 1.8; flex: 1; }
-  .card-footer {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 1rem 1.5rem; border-top: 1px solid rgba(212,168,67,0.1);
-  }
-  .product-price { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 0.1em; color: var(--or); }
-  .product-tag { font-size: 0.6rem; letter-spacing: 0.25em; color: var(--or); opacity: 0.5; font-family: 'Bebas Neue', sans-serif; }
+  section { padding: 5rem; }
+  .section-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 3rem; border-bottom: 1px solid var(--or-border); padding-bottom: 1.5rem; }
+  .section-head h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700; color: var(--cream); line-height: 1; }
+  .section-head h2 .accent { color: var(--or); font-style: italic; }
+  .section-kicker { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(212,168,67,0.55); font-weight: 500; }
+  .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+  .product-card { background: var(--noir-mid); border: 1px solid var(--or-border); overflow: hidden; transition: transform 0.25s, box-shadow 0.25s, border-color 0.3s; }
+  .product-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(212,168,67,0.1); border-color: rgba(212,168,67,0.4); }
+  .product-img { height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; background: #12100B; position: relative; }
+  .product-img-symbol { font-size: 3.5rem; color: var(--or); opacity: 0.5; }
+  .product-img-brand { height: 48px; object-fit: contain; opacity: 0.85; }
+  .product-badge { position: absolute; top: 0.75rem; right: 0.75rem; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; padding: 0.25rem 0.6rem; }
+  .badge-new { background: var(--or); color: var(--noir); }
+  .badge-hot { background: #C0392B; color: #fff; }
+  .badge-bs { background: rgba(212,168,67,0.2); color: var(--or); border: 1px solid var(--or-border); }
+  .product-body { padding: 1.25rem; }
+  .product-brand-row { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+  .product-brand-tag { font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--or); opacity: 0.6; font-weight: 600; }
+  .product-name { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 700; color: var(--cream); margin-bottom: 0.3rem; line-height: 1.1; }
+  .product-sub { font-size: 0.78rem; font-weight: 300; color: var(--cream-dim); margin-bottom: 0.6rem; font-style: italic; }
+  .product-desc { font-size: 0.8rem; color: rgba(253,248,240,0.55); line-height: 1.65; margin-bottom: 0.75rem; }
+  .product-footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--or-border); padding-top: 1rem; }
+  .product-price { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: var(--or); }
+  .product-price small { font-size: 0.8rem; color: var(--cream-dim); font-weight: 300; font-family: 'Jost', sans-serif; }
+  .add-btn { background: var(--or); color: var(--noir); border: none; border-radius: 2rem; padding: 0.5rem 1.2rem; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background 0.18s, transform 0.15s; }
+  .add-btn:hover { background: var(--or-light); transform: scale(1.04); }
+  .add-btn.added { background: #2A5C3A; color: #fff; }
 
-  /* ABOUT */
-  .about-section {
-    padding: 8rem 4rem;
-    background: var(--noir-mid);
-    border-top: 1px solid var(--or-border);
-    border-bottom: 1px solid var(--or-border);
-  }
-  .about-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
-  .about-eyebrow { font-family: 'Bebas Neue', sans-serif; font-size: 0.65rem; letter-spacing: 0.55em; color: var(--or); display: block; margin-bottom: 1rem; }
-  .about-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; color: var(--cream); margin-bottom: 1.5rem; line-height: 1.1; }
-  .about-title em { font-style: italic; color: var(--or); }
-  .about-body { font-size: 1rem; line-height: 1.9; color: var(--cream-dim); margin-bottom: 2rem; }
-  .about-quote { border-left: 2px solid var(--or); padding-left: 1.5rem; margin: 0; }
-  .about-quote p { font-style: italic; font-size: 1.1rem; color: var(--cream); line-height: 1.75; }
-  .about-quote cite { display: block; font-size: 0.68rem; letter-spacing: 0.2em; color: var(--or); margin-top: 1rem; font-style: normal; font-family: 'Bebas Neue', sans-serif; }
-  .about-facts { display: flex; flex-direction: column; gap: 1.25rem; }
-  .about-fact { padding: 1.5rem; border: 1px solid var(--or-border); background: var(--or-pale); }
-  .about-fact-label { font-family: 'Bebas Neue', sans-serif; font-size: 0.62rem; letter-spacing: 0.4em; color: var(--or); margin-bottom: 0.6rem; display: block; }
-  .about-fact-text { font-size: 0.9rem; color: var(--cream-dim); line-height: 1.65; }
+  /* FEATURES */
+  .features { background: #0A0604; padding: 4rem 5rem; border-top: 1px solid var(--or-border); border-bottom: 1px solid var(--or-border); }
+  .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+  .feature-item { text-align: center; }
+  .feature-icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
+  .feature-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; color: var(--or-light); margin-bottom: 0.3rem; }
+  .feature-desc { font-size: 0.8rem; font-weight: 300; color: var(--cream-faint); line-height: 1.65; }
 
-  /* CTA */
-  .cta-section { padding: 7rem 4rem; text-align: center; position: relative; overflow: hidden; }
-  .cta-section::before {
-    content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-    width: 1px; height: 4rem; background: linear-gradient(to bottom, transparent, var(--or));
-  }
-  .cta-eyebrow { font-family: 'Bebas Neue', sans-serif; font-size: 0.65rem; letter-spacing: 0.5em; color: var(--or); margin-bottom: 1.5rem; display: block; }
-  .cta-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; color: var(--cream); margin-bottom: 1rem; }
-  .cta-sub { color: var(--cream-dim); font-size: 1rem; margin-bottom: 3rem; max-width: 440px; margin-left: auto; margin-right: auto; line-height: 1.7; }
-  .btn-gold { display: inline-block; font-family: 'Bebas Neue', sans-serif; font-size: 0.88rem; letter-spacing: 0.25em; padding: 1.1rem 3rem; background: var(--or); color: var(--noir); text-decoration: none; transition: all 0.3s; border: 2px solid var(--or); }
-  .btn-gold:hover { background: transparent; color: var(--or); }
-  .btn-ghost { display: inline-block; font-family: 'Bebas Neue', sans-serif; font-size: 0.88rem; letter-spacing: 0.25em; padding: 1.1rem 3rem; border: 2px solid var(--or-border); color: var(--cream-dim); text-decoration: none; transition: all 0.3s; margin-left: 1rem; }
-  .btn-ghost:hover { border-color: var(--or); color: var(--or); }
+  /* STORY */
+  .story { display: grid; grid-template-columns: 1fr 1fr; padding: 0; background: var(--noir-mid); }
+  .story-img { background: radial-gradient(ellipse at center, #3D2A08, #1A1208 60%, #0D0807); min-height: 480px; display: flex; align-items: center; justify-content: center; font-size: 7rem; position: relative; overflow: hidden; border-right: 1px solid var(--or-border); }
+  .story-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, transparent 60%, var(--noir-mid)); }
+  .story-text { padding: 5rem 4rem; display: flex; flex-direction: column; justify-content: center; }
+  .story-text .section-kicker { margin-bottom: 1rem; display: block; }
+  .story-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 700; color: var(--cream); line-height: 1.15; margin-bottom: 1.5rem; }
+  .story-text h2 em { font-style: italic; color: var(--or); }
+  .story-text p { font-size: 0.92rem; font-weight: 300; color: var(--cream-dim); line-height: 1.85; margin-bottom: 1rem; max-width: 440px; }
+
+  /* ATI SECTION */
+  .ati-section { background: var(--noir-light); display: grid; grid-template-columns: 400px 1fr; min-height: 520px; overflow: hidden; border-top: 1px solid var(--or-border); }
+  .ati-visual { background: radial-gradient(ellipse at 30% 60%, #3D2A08, #1A1208 60%, #0D0807); display: flex; align-items: flex-end; justify-content: center; position: relative; overflow: hidden; padding-top: 3rem; }
+  .ati-visual::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23D4A843' fill-opacity='0.04'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E"); }
+  .ati-avatar-wrap { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
+  .ati-avatar-img { width: 240px; height: 240px; border-radius: 50%; border: 4px solid var(--or); object-fit: cover; box-shadow: 0 0 0 8px rgba(212,168,67,0.12), 0 0 0 16px rgba(212,168,67,0.05); }
+  .ati-badge-seal { position: absolute; bottom: -10px; right: -10px; width: 76px; height: 76px; background: var(--or); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border: 3px solid var(--noir-light); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+  .seal-icon { font-size: 1.1rem; }
+  .seal-text { font-size: 0.4rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--noir); line-height: 1.2; padding: 0 4px; }
+  .ati-ribbon { background: var(--or); color: var(--noir); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.4rem 2.2rem; margin-top: 1.5rem; position: relative; z-index: 2; clip-path: polygon(8px 0%, calc(100% - 8px) 0%, 100% 50%, calc(100% - 8px) 100%, 8px 100%, 0% 50%); }
+  .ati-content { padding: 4rem 4.5rem; display: flex; flex-direction: column; justify-content: center; }
+  .ati-kicker { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--or-light); font-weight: 500; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.6rem; }
+  .ati-kicker::before { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--or); }
+  .ati-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 700; color: var(--cream); line-height: 0.95; margin-bottom: 0.5rem; }
+  .ati-name em { font-style: italic; color: var(--or-light); }
+  .ati-title-tag { display: inline-flex; align-items: center; background: rgba(212,168,67,0.1); border: 1px solid var(--or-border); border-radius: 2rem; padding: 0.35rem 1rem; font-size: 0.72rem; font-weight: 500; color: var(--or-light); letter-spacing: 0.06em; margin-bottom: 2rem; width: fit-content; }
+  .ati-bio { font-size: 0.92rem; font-weight: 300; color: var(--cream-dim); line-height: 1.85; margin-bottom: 1rem; max-width: 500px; }
+  .ati-quote { border-left: 3px solid var(--or); padding-left: 1.25rem; margin: 1.75rem 0; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; color: var(--cream); line-height: 1.5; max-width: 440px; }
+  .ati-stats { display: flex; gap: 2.5rem; margin-top: 0.5rem; }
+  .ati-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--or-light); display: block; line-height: 1; margin-bottom: 0.2rem; }
+  .ati-stat-label { font-size: 0.68rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream-faint); }
+
+  /* TESTIMONIALS */
+  .testimonials { background: var(--noir); }
+  .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .testimonial-card { background: var(--noir-mid); border: 1px solid var(--or-border); padding: 1.75rem; position: relative; transition: border-color 0.3s; }
+  .testimonial-card:hover { border-color: rgba(212,168,67,0.4); }
+  .testimonial-card::before { content: '\201C'; font-family: 'Cormorant Garamond', serif; font-size: 5rem; color: rgba(212,168,67,0.1); position: absolute; top: 0.5rem; left: 1rem; line-height: 1; }
+  .testimonial-text { font-size: 0.88rem; color: var(--cream-dim); line-height: 1.75; margin-bottom: 1.25rem; padding-top: 2rem; font-style: italic; }
+  .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+  .author-avatar { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 600; color: var(--noir); background: var(--or); flex-shrink: 0; }
+  .author-name { font-size: 0.82rem; font-weight: 600; color: var(--cream); }
+  .author-loc { font-size: 0.72rem; color: var(--cream-dim); }
+  .stars { color: var(--or); font-size: 0.7rem; }
 
   /* FOOTER */
-  footer { border-top: 1px solid var(--or-border); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-  .footer-brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1rem; color: var(--or); }
-  footer p { font-size: 0.72rem; color: var(--cream-faint); letter-spacing: 0.08em; }
+  footer { background: #0A0604; padding: 4rem 5rem 2rem; color: var(--cream-faint); border-top: 1px solid var(--or-border); }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+  .footer-brand-name { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--or); display: block; margin-bottom: 1rem; }
+  .footer-brand-name em { font-style: italic; }
+  .footer-brand p { font-size: 0.82rem; font-weight: 300; line-height: 1.75; max-width: 280px; }
+  .footer-col h4 { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--or-light); font-weight: 600; margin-bottom: 1.2rem; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { font-size: 0.82rem; margin-bottom: 0.6rem; cursor: pointer; transition: color 0.2s; }
+  .footer-col ul li:hover { color: var(--cream); }
+  .footer-bottom { border-top: 1px solid var(--or-border); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+  .footer-bottom p { font-size: 0.75rem; }
 
-  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 0.5rem; }
-  .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--or); }
+  /* CART */
+  .cart-overlay { position: fixed; inset: 0; z-index: 200; background: rgba(10,6,4,0.7); opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+  .cart-overlay.open { opacity: 1; pointer-events: all; }
+  .cart-panel { position: fixed; top: 0; right: 0; bottom: 0; z-index: 201; width: 420px; background: var(--noir-mid); transform: translateX(100%); transition: transform 0.35s cubic-bezier(.4,0,.2,1); display: flex; flex-direction: column; border-left: 1px solid var(--or-border); }
+  .cart-panel.open { transform: translateX(0); }
+  .cart-header { padding: 1.5rem 1.75rem; border-bottom: 1px solid var(--or-border); display: flex; align-items: center; justify-content: space-between; }
+  .cart-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: var(--or); }
+  .close-cart { background: none; border: none; cursor: pointer; font-size: 1.4rem; color: var(--cream-dim); transition: color 0.2s; line-height: 1; }
+  .close-cart:hover { color: var(--or); }
+  .cart-items { flex: 1; overflow-y: auto; padding: 1rem 1.75rem; }
+  .cart-empty { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; gap: 1rem; color: var(--cream-dim); }
+  .cart-empty span { font-size: 3rem; opacity: 0.4; }
+  .cart-empty p { font-size: 0.9rem; font-weight: 300; font-style: italic; }
+  .cart-item { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--or-border); }
+  .cart-item-icon { width: 54px; height: 54px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; background: var(--noir-light); flex-shrink: 0; }
+  .cart-item-info { flex: 1; }
+  .cart-item-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 700; color: var(--cream); margin-bottom: 0.15rem; }
+  .cart-item-qty { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem; }
+  .qty-btn { width: 22px; height: 22px; background: var(--noir-light); border: 1px solid var(--or-border); font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--or); font-weight: 600; transition: background 0.15s; }
+  .qty-btn:hover { background: var(--or-pale); }
+  .qty-num { font-size: 0.85rem; font-weight: 500; min-width: 18px; text-align: center; color: var(--cream); }
+  .cart-item-price { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; color: var(--or); flex-shrink: 0; }
+  .remove-item { background: none; border: none; cursor: pointer; color: rgba(212,168,67,0.35); font-size: 1rem; transition: color 0.2s; padding: 0.25rem; }
+  .remove-item:hover { color: #C0392B; }
+  .cart-footer { padding: 1.25rem 1.75rem; border-top: 1px solid var(--or-border); background: var(--noir); }
+  .cart-sub-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem; }
+  .cart-sub-row span { font-size: 0.8rem; color: var(--cream-dim); }
+  .cart-total-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.25rem; padding-bottom: 1rem; border-bottom: 1px solid var(--or-border); }
+  .cart-total-row strong { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 700; color: var(--cream); }
+  .total-price { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 700; color: var(--or); }
+  .checkout-btn { width: 100%; background: var(--or); color: var(--noir); border: none; padding: 1rem; font-family: 'Jost', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+  .checkout-btn:hover { background: var(--or-light); }
+  .toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(100px); background: #2A5C3A; color: #fff; padding: 0.75rem 1.5rem; border-radius: 2rem; font-size: 0.82rem; font-weight: 500; z-index: 300; transition: transform 0.3s cubic-bezier(.4,0,.2,1); white-space: nowrap; }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* HAMBURGER */
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 0.25rem; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--or); border-radius: 2px; transition: all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--noir-mid); z-index: 500; flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; border-right: 2px solid var(--or); }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: var(--cream-dim); }
+  .mobile-menu a { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 700; color: var(--cream); text-decoration: none; letter-spacing: 0.05em; }
+  .mobile-menu a:hover { color: var(--or); }
+
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
   @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-cta { display: none; }
-    .nav-hamburger { display: flex; }
-    .nav-links { display: none; }
-    .nav-links.open { display: flex; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: var(--noir-mid); border-bottom: 1px solid var(--or-border); padding: 0.5rem 0; gap: 0; }
-    .nav-links.open a { display: block; padding: 0.85rem 1.5rem; border-bottom: 1px solid rgba(212,168,67,0.05); }
-    .products-section { padding: 5rem 1.5rem; }
-    .products-grid { grid-template-columns: 1fr; }
-    .about-section { padding: 5rem 1.5rem; }
-    .about-inner { grid-template-columns: 1fr; gap: 3rem; }
-    .cta-section { padding: 5rem 1.5rem; }
-    .btn-ghost { margin-left: 0; margin-top: 1rem; display: block; }
-    footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+    .topbar { padding: 0 1.5rem; }
+    header { grid-template-columns: 100px 1fr auto; height: 90px; top: 34px; }
+    .header-logo-img { height: 58px; }
+    .header-site-name { font-size: 1.8rem; }
+    .header-nav-links { display: none; }
+    .header-actions { padding: 0.5rem 1rem; gap: 0.5rem; flex-direction: row; }
+    .cart-btn span:not(.cart-count) { display: none; }
+    .cart-btn { padding: 0.5rem 0.75rem; }
+    .hamburger { display: flex; }
+    .header-spacer { height: 124px; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 3rem 1.5rem; }
+    .hero-right { height: 260px; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr); }
+    section { padding: 2.5rem 1.25rem; }
+    .section-head { flex-direction: column; gap: 0.25rem; }
+    .product-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .features { padding: 2.5rem 1.25rem; }
+    .features-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    .story { grid-template-columns: 1fr; }
+    .story-img { display: none; }
+    .story-text { padding: 2.5rem 1.25rem; }
+    .ati-section { grid-template-columns: 1fr; }
+    .ati-visual { min-height: 260px; padding: 1.5rem; align-items: center; }
+    .ati-avatar-img { width: 180px; height: 180px; }
+    .ati-content { padding: 2rem 1.25rem; }
+    .ati-stats { gap: 1.25rem; flex-wrap: wrap; }
+    .testimonial-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+    footer { padding: 3rem 1.25rem 2rem; }
+    .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    .cart-panel { width: 100%; }
+  }
+  @media (max-width: 480px) {
+    .product-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
-<nav>
-  <a href="/" class="nav-brand">
-    <img src="images/lakou-ati-logo.png" alt="Lakou Ati" class="nav-logo-img">
-    <span class="nav-brand-name">Lakou Ati</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#products">Products</a></li>
-    <li><a href="#about">The Blessing</a></li>
-    <li><a href="#order">Order</a></li>
-  </ul>
-  <a href="mailto:contact@lakouati.com" class="nav-cta">Order Now</a>
-  <button class="nav-hamburger" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+<!-- TOP BAR -->
+<div class="topbar">
+  <span class="topbar-tagline" id="topbar-tag"></span>
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('ht')">KR</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-logo-slot">
+    <img class="header-logo-img" src="images/lakou-ati-logo.png" alt="Lakou Ati">
+  </div>
+  <div class="header-brand">
+    <div class="header-site-name">Lakou <span>Ati</span></div>
+    <ul class="header-nav-links">
+      <li><a href="#products" data-i18n="nav.products"></a></li>
+      <li><a href="#story" data-i18n="nav.story"></a></li>
+      <li><a href="#ati" data-i18n="nav.ati"></a></li>
+      <li><a href="#testimonials" data-i18n="nav.reviews"></a></li>
+    </ul>
+  </div>
+  <div class="header-actions">
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('ht')">KR</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="cart-btn" onclick="toggleCart()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>
+      <span data-i18n="nav.cart"></span>
+      <span class="cart-count" id="cart-count">0</span>
+    </button>
+    <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-menu-close" onclick="toggleMobileMenu()">✕</button>
+  <a href="#products" data-i18n="nav.products" onclick="toggleMobileMenu()"></a>
+  <a href="#story" data-i18n="nav.story" onclick="toggleMobileMenu()"></a>
+  <a href="#ati" data-i18n="nav.ati" onclick="toggleMobileMenu()"></a>
+  <a href="#testimonials" data-i18n="nav.reviews" onclick="toggleMobileMenu()"></a>
+</div>
+
+<div class="header-spacer"></div>
+
+<!-- STRIP -->
+<div class="strip"><div class="strip-inner" id="strip-inner"></div></div>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-symbol">✦ &nbsp; ✦ &nbsp; ✦</div>
-  <div class="hero-eyebrow">Lakou Ati · The Sacred Yard · Pembroke Pines, FL</div>
-  <h1 class="hero-title">
-    The Sacred
-    <em>Yard</em>
-  </h1>
-  <div class="hero-rule"></div>
-  <p class="hero-sub">Every product personally blessed by <strong>Carl Henry Desmornes</strong>, Ati National of Haiti — the highest spiritual authority in the Haitian Vodou tradition. No other brand in the world can offer this.</p>
-  <span class="hero-scroll">✦ &nbsp; Blessed Before Every Shipment · Delivered Worldwide &nbsp; ✦</span>
+<section class="hero" style="padding:0;" id="home">
+  <div class="hero-left">
+    <p class="hero-kicker" data-i18n="hero.kicker"></p>
+    <h1 class="hero-title">
+      <span data-i18n="hero.line1"></span>
+      <em data-i18n="hero.line2"></em>
+      <span data-i18n="hero.line3"></span>
+    </h1>
+    <p class="hero-desc" data-i18n="hero.desc"></p>
+    <button class="hero-cta" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+      <span data-i18n="hero.cta"></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:15px;height:15px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+  <div class="hero-right" id="product-tiles"></div>
 </section>
 
 <!-- PRODUCTS -->
-<section class="products-section" id="products">
-  <div class="products-inner">
-    <div class="section-header">
-      <span class="section-eyebrow">Sacred Collection · Six Products</span>
-      <h2 class="section-title">Blessed <em>Goods</em></h2>
-      <p class="section-sub">Each item carries the personal blessing of the Ati National — a sacred ceremony performed before every shipment.</p>
+<section class="products" id="products" style="background:var(--noir);">
+  <div class="section-head">
+    <h2><span data-i18n="products.h1"></span> <span class="accent" data-i18n="products.h2"></span></h2>
+    <span class="section-kicker" data-i18n="products.kicker"></span>
+  </div>
+  <div class="product-grid" id="product-grid"></div>
+</section>
+
+<!-- FEATURES -->
+<div class="features">
+  <div class="features-grid">
+    <div class="feature-item"><span class="feature-icon">✦</span><p class="feature-title" data-i18n="feat.1.t"></p><p class="feature-desc" data-i18n="feat.1.d"></p></div>
+    <div class="feature-item"><span class="feature-icon">🇭🇹</span><p class="feature-title" data-i18n="feat.2.t"></p><p class="feature-desc" data-i18n="feat.2.d"></p></div>
+    <div class="feature-item"><span class="feature-icon">🌍</span><p class="feature-title" data-i18n="feat.3.t"></p><p class="feature-desc" data-i18n="feat.3.d"></p></div>
+    <div class="feature-item"><span class="feature-icon">🔒</span><p class="feature-title" data-i18n="feat.4.t"></p><p class="feature-desc" data-i18n="feat.4.d"></p></div>
+  </div>
+</div>
+
+<!-- STORY -->
+<div class="story" id="story">
+  <div class="story-img">✦</div>
+  <div class="story-text">
+    <span class="section-kicker" data-i18n="story.kicker"></span>
+    <h2 data-i18n="story.title"></h2>
+    <p data-i18n="story.p1"></p>
+    <p data-i18n="story.p2"></p>
+    <p data-i18n="story.p3"></p>
+  </div>
+</div>
+
+<!-- ATI SECTION -->
+<div class="ati-section" id="ati">
+  <div class="ati-visual">
+    <div class="ati-avatar-wrap">
+      <img src="images/carl-henry.jpeg" alt="Carl Henry Desmornes" class="ati-avatar-img">
+      <div class="ati-badge-seal"><span class="seal-icon">✦</span><span class="seal-text" data-i18n="ati.seal"></span></div>
+      <div class="ati-ribbon" data-i18n="ati.ribbon"></div>
     </div>
-    <div class="products-grid">
-      <div class="product-card">
-        <div class="card-header">
-          <div class="card-brand"><img src="images/bitasyon.png" alt="Bitasyon"><span class="card-brand-name">Bitasyon</span></div>
-          <span class="card-num">01</span>
-        </div>
-        <div class="card-body">
-          <span class="card-symbol">◉</span>
-          <div class="product-name-kr">Lwil Beni</div>
-          <div class="product-name-en">Blessed Sacred Oils</div>
-          <p class="product-desc">Spiritually infused botanical oils for protection, healing, and ritual work. Each bottle personally blessed by the Ati National before shipment.</p>
-        </div>
-        <div class="card-footer">
-          <span class="product-price">From $18.99</span>
-          <span class="product-tag">✦ Blessed</span>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="card-header">
-          <div class="card-brand"><img src="images/bitasyon.png" alt="Bitasyon"><span class="card-brand-name">Bitasyon</span></div>
-          <span class="card-num">02</span>
-        </div>
-        <div class="card-body">
-          <span class="card-symbol">≋</span>
-          <div class="product-name-kr">Dlo Espirityèl</div>
-          <div class="product-name-en">Spiritual Waters</div>
-          <p class="product-desc">Sacred waters for cleansing ceremonies, altar offerings, and spiritual baths. Blessed and consecrated with intention and prayer.</p>
-        </div>
-        <div class="card-footer">
-          <span class="product-price">From $16.99</span>
-          <span class="product-tag">✦ Blessed</span>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="card-header">
-          <div class="card-brand"><img src="images/bitasyon.png" alt="Bitasyon"><span class="card-brand-name">Bitasyon</span></div>
-          <span class="card-num">03</span>
-        </div>
-        <div class="card-body">
-          <span class="card-symbol">△</span>
-          <div class="product-name-kr">Bougies Beni</div>
-          <div class="product-name-en">Blessed Candles</div>
-          <p class="product-desc">Ceremonial candles for prayer, meditation, and spiritual work. Blessed before packaging — each flame carries the Ati's intention.</p>
-        </div>
-        <div class="card-footer">
-          <span class="product-price">From $14.99</span>
-          <span class="product-tag">✦ Blessed</span>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="card-header">
-          <div class="card-brand"><img src="images/bitasyon.png" alt="Bitasyon"><span class="card-brand-name">Bitasyon</span></div>
-          <span class="card-num">04</span>
-        </div>
-        <div class="card-body">
-          <span class="card-symbol">✿</span>
-          <div class="product-name-kr">Pafen Sakre</div>
-          <div class="product-name-en">Sacred Perfumes</div>
-          <p class="product-desc">Ritual fragrances crafted from Haitian botanical ingredients. Worn for spiritual protection, attraction, and ceremonial purposes.</p>
-        </div>
-        <div class="card-footer">
-          <span class="product-price">From $22.99</span>
-          <span class="product-tag">✦ Blessed</span>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="card-header">
-          <span style="font-family:'Bebas Neue',sans-serif;font-size:0.58rem;letter-spacing:0.4em;color:var(--or);opacity:0.4;">Lakou Ati</span>
-          <span class="card-num">05</span>
-        </div>
-        <div class="card-body">
-          <span class="card-symbol">✦</span>
-          <div class="product-name-kr">Fishu ak Foulà</div>
-          <div class="product-name-en">Ceremonial Wraps</div>
-          <p class="product-desc">Traditional Haitian ceremonial head wraps and sashes worn in Vodou rituals, celebrations, and sacred dress. Handcrafted and blessed.</p>
-        </div>
-        <div class="card-footer">
-          <span class="product-price">From $29.99</span>
-          <span class="product-tag">✦ Blessed</span>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="card-header">
-          <div class="card-brand"><img src="images/bitasyon.png" alt="Bitasyon"><span class="card-brand-name">Bitasyon</span></div>
-          <span class="card-num">06</span>
-        </div>
-        <div class="card-body">
-          <span class="card-symbol">✎</span>
-          <div class="product-name-kr">Papye Pou Priye</div>
-          <div class="product-name-en">Prayer & Wishing Paper</div>
-          <p class="product-desc">Sacred paper for writing prayers, intentions, and wishes. Used in altars, flame ceremonies, and offerings to the Lwa. Blessed before sealing.</p>
-        </div>
-        <div class="card-footer">
-          <span class="product-price">From $9.99</span>
-          <span class="product-tag">✦ Blessed</span>
-        </div>
-      </div>
+  </div>
+  <div class="ati-content">
+    <p class="ati-kicker" data-i18n="ati.kicker"></p>
+    <h2 class="ati-name">Carl Henry<br><em>Desmornes</em></h2>
+    <div class="ati-title-tag" data-i18n="ati.tag"></div>
+    <p class="ati-bio" data-i18n="ati.bio1"></p>
+    <p class="ati-bio" data-i18n="ati.bio2"></p>
+    <blockquote class="ati-quote" data-i18n="ati.quote"></blockquote>
+    <div class="ati-stats">
+      <div><span class="ati-stat-num">1</span><span class="ati-stat-label" data-i18n="ati.s1"></span></div>
+      <div><span class="ati-stat-num">6</span><span class="ati-stat-label" data-i18n="ati.s2"></span></div>
+      <div><span class="ati-stat-num">100%</span><span class="ati-stat-label" data-i18n="ati.s3"></span></div>
     </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="section-head">
+    <h2><span data-i18n="rev.h1"></span> <span class="accent" data-i18n="rev.h2"></span></h2>
+    <span class="section-kicker" data-i18n="rev.kicker"></span>
+  </div>
+  <div class="testimonial-grid">
+    <div class="testimonial-card"><p class="testimonial-text" data-i18n="rev.1.t"></p><div class="testimonial-author"><div class="author-avatar">MJ</div><div><p class="author-name">Marie-Jeanne Dorsainvil</p><p class="author-loc">Miami, FL — <span class="stars">★★★★★</span></p></div></div></div>
+    <div class="testimonial-card"><p class="testimonial-text" data-i18n="rev.2.t"></p><div class="testimonial-author"><div class="author-avatar">RP</div><div><p class="author-name">Rodrigue Pierre-Louis</p><p class="author-loc">Brooklyn, NY — <span class="stars">★★★★★</span></p></div></div></div>
+    <div class="testimonial-card"><p class="testimonial-text" data-i18n="rev.3.t"></p><div class="testimonial-author"><div class="author-avatar">CB</div><div><p class="author-name">Claudette Beaubrun</p><p class="author-loc">Montréal, QC — <span class="stars">★★★★★</span></p></div></div></div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="about-section" id="about">
-  <div class="about-inner">
-    <div>
-      <span class="about-eyebrow">Carl Henry Desmornes · Ati National of Haiti</span>
-      <h2 class="about-title">The <em>Blessing</em></h2>
-      <p class="about-body">Carl Henry Desmornes holds the title of Ati National of Haiti — the supreme spiritual authority of the Haitian Vodou tradition. No other living person holds this position. Every Lakou Ati product is personally blessed in a sacred ceremony before it is packaged and shipped.</p>
-      <div class="about-quote">
-        <p>"This blessing is not a ritual performed in bulk. Each product passes through my hands, my prayers, my intention. It carries that with it — wherever it goes in the world."</p>
-        <cite>— Carl Henry Desmornes, Ati National of Haiti</cite>
-      </div>
-    </div>
-    <div class="about-facts">
-      <div class="about-fact">
-        <span class="about-fact-label">Unmatched Authority</span>
-        <p class="about-fact-text">The Ati National is the highest-ranking spiritual leader in Haitian Vodou. No competitor anywhere in the world can offer products blessed at this level.</p>
-      </div>
-      <div class="about-fact">
-        <span class="about-fact-label">A Sacred Ceremony</span>
-        <p class="about-fact-text">Each blessing is a genuine spiritual act — not a marketing claim. Every product is handled personally by the Ati National before shipment.</p>
-      </div>
-      <div class="about-fact">
-        <span class="about-fact-label">Global Distribution</span>
-        <p class="about-fact-text">Shipped from Miami to the Haitian diaspora worldwide. Physical distribution across Haiti through our partnership with Ramada SA.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ORDER CTA -->
-<section class="cta-section" id="order">
-  <span class="cta-eyebrow">Ready to order?</span>
-  <h2 class="cta-title">Carry the Blessing</h2>
-  <p class="cta-sub">Contact us to place an order, ask about bulk pricing, or learn more about any product in our sacred collection.</p>
-  <a href="mailto:contact@lakouati.com" class="btn-gold">Order via Email</a>
-  <a href="https://lavimiyo.com/store" class="btn-ghost">All Three Brands</a>
-</section>
-
+<!-- FOOTER -->
 <footer>
-  <span class="footer-brand">Lakou Ati</span>
-  <p>© 2025 LavimiyòLLC · Pembroke Pines, FL · contact@lakouati.com</p>
+  <div class="footer-top">
+    <div class="footer-brand"><span class="footer-brand-name">Lakou <em>Ati</em></span><p data-i18n="foot.tag"></p></div>
+    <div class="footer-col"><h4 data-i18n="foot.c1h"></h4><ul><li data-i18n="foot.c1.1"></li><li data-i18n="foot.c1.2"></li><li data-i18n="foot.c1.3"></li><li data-i18n="foot.c1.4"></li></ul></div>
+    <div class="footer-col"><h4 data-i18n="foot.c2h"></h4><ul><li data-i18n="foot.c2.1"></li><li data-i18n="foot.c2.2"></li><li data-i18n="foot.c2.3"></li><li data-i18n="foot.c2.4"></li></ul></div>
+    <div class="footer-col"><h4 data-i18n="foot.c3h"></h4><ul><li data-i18n="foot.c3.1"></li><li data-i18n="foot.c3.2"></li><li data-i18n="foot.c3.3"></li><li data-i18n="foot.c3.4"></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p data-i18n="foot.copy"></p>
+    <p style="font-size:0.72rem;letter-spacing:0.1em;color:rgba(212,168,67,0.25);">MIAMI · PÒ-O-PRENS · MONTRÉAL</p>
+  </div>
 </footer>
 
+<!-- CART -->
+<div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+<div class="cart-panel" id="cart-panel">
+  <div class="cart-header"><span class="cart-title" id="cart-title-el"></span><button class="close-cart" onclick="toggleCart()">✕</button></div>
+  <div class="cart-items" id="cart-items-list"><div class="cart-empty"><span>✦</span><p id="cart-empty-el"></p></div></div>
+  <div class="cart-footer" id="cart-footer" style="display:none;">
+    <div class="cart-sub-row"><span id="cart-sub-label"></span><span id="cart-sub-val">$0.00</span></div>
+    <div class="cart-sub-row"><span id="cart-ship-label"></span><span style="color:#2A5C3A;font-weight:600;" id="cart-free-label"></span></div>
+    <div class="cart-total-row"><strong id="cart-total-label"></strong><span class="total-price" id="cart-total-val">$0.00</span></div>
+    <button class="checkout-btn" id="checkout-btn-el"></button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
 <script>
-  document.querySelector('.nav-hamburger').addEventListener('click', function() {
-    document.querySelector('.nav-links').classList.toggle('open');
+const T = {
+  ht: {
+    'topbar.tag': 'Pwodwi Espirityèl Sakre — Beni pa Ati Nasyonal Ayiti',
+    'nav.products':'Pwodwi','nav.story':'Istwa Nou','nav.ati':'Ati Nasyonal','nav.reviews':'Opinyon','nav.cart':'Panye',
+    'hero.kicker':'✦ Pwodwi Espirityèl Otantik',
+    'hero.line1':'Lakou','hero.line2':'Sakre','hero.line3':'a',
+    'hero.desc':'Chak pwodwi beni pèsonèlman pa Carl Henry Desmornes, Ati Nasyonal Ayiti — sèl moun sou latè ki genyen otoritay sa a.',
+    'hero.cta':'Dekouvri Koleksyon Nou',
+    'products.h1':'Pwodwi','products.h2':'Sakre Nou Yo','products.kicker':'Koleksyon Beni',
+    'badge.new':'Nouvo','badge.hot':'🔥 Pi Renmen','badge.bs':'Pi Vann',
+    'p.unit':'','p.add':'+ Ajoute','p.added':'✓ Ajoute',
+    'feat.1.t':'Beni Pèsonèlman','feat.1.d':'Ati Nasyonal beni chak pwodwi anvan ekspedisyon — yon sèremoni sakre, pa yon deklarasyon maketing.',
+    'feat.2.t':'Otoritay Ayisyen','feat.2.d':'Okenn lòt mak nan mond lan pa ka ofri pwodwi ki beni pa otoritay espirityèl ki pi wo nan Vodou Ayisyen.',
+    'feat.3.t':'Livrezon Mondyal','feat.3.d':'Ekspedisyon depi Miami pou dyaspora ayisyen an atravè kat kontinan.',
+    'feat.4.t':'Garanti Otantik','feat.4.d':'Chak pwodwi pote sèl sèremonyèl Lakou Ati — mak Ati Nasyonal a.',
+    'story.kicker':'Misyon Nou','story.title':'Sakre a <em>viv</em> nan chak pwodwi',
+    'story.p1':'Lakou Ati — "lakou sakre" an kreyòl — se yon espas kote tradisyon Vodou ayisyen rankontre mond modèn lan.',
+    'story.p2':'Carl Henry Desmornes, kòm Ati Nasyonal, pote responsabilite garanti ke chak pwodwi ki pati nan men nou ale ak yon beni otantik.',
+    'story.p3':'Sa pa janm fèt an gwo kantite. Chak beni se yon akto espirityèl endividyèl — li pase nan men li, nan priyè li, nan entansyon li.',
+    'ati.seal':'Beni\nOfisyèl','ati.ribbon':'Ati Nasyonal · Ayiti',
+    'ati.kicker':'Garanti Otantik',
+    'ati.tag':'✦ Ati Nasyonal · Otoritay Espirityèl Ki Pi Wo Nan Vodou Ayisyen',
+    'ati.bio1':'Carl Henry Desmornes pote tit Ati Nasyonal Ayiti — sòm otoritay espirityèl tradisyon Vodou Ayisyen. Okenn lòt moun vivan pa kenbe pozisyon sa a.',
+    'ati.bio2':'Chak pwodwi Lakou Ati pase anba men li nan yon sèremoni sakre anvan li pakèje epi ekspedye. Sa pa yon pwomès maketing — se yon akto espirityèl reyèl.',
+    'ati.quote':'« Benediksyon sa a pa fèt an gwo. Chak pwodwi pase nan men mwen, nan priyè mwen, nan entansyon mwen. Li pote sa ak li — kèlkeswa kote li ale nan mond lan. »',
+    'ati.s1':'Ati Nasyonal nan mond lan','ati.s2':'Pwodwi sakre','ati.s3':'Beni anvan ekspedisyon',
+    'rev.h1':'Yo','rev.h2':'Fè Konfyans Nou','rev.kicker':'Opinyon Verifye',
+    'rev.1.t':'Lwil beni an se yon pwodwi ekstraòdinè. Depi m te resevwa li, mwen santi yon pwoteksyon reyèl. M pa janm kwè nan pwodwi konsa men sa a diferan.',
+    'rev.2.t':'Bougies yo bele anpil epi yo brile pou lontan. Konesans ke Ati Nasyonal beni yo pèsonèlman ba yo yon valè ki pa ka achte.',
+    'rev.3.t':'M te kòmande papye pou priye yo pou seremoni lafanmi mwen. Kliyan sèvis la te eksepsyonèl. Mèsi Lakou Ati!',
+    'foot.tag':'Pwodwi espirityèl sakre, beni ak lanmou, livre nan pòt ou. Tradisyon Ayiti, tout kote nan mond lan.',
+    'foot.c1h':'Boutik','foot.c1.1':'Tout pwodwi','foot.c1.2':'Koleksyon Bitasyon','foot.c1.3':'Pakèj sèremonyèl','foot.c1.4':'Edisyon limite',
+    'foot.c2h':'Enfòmasyon','foot.c2.1':'Istwa nou','foot.c2.2':'Ati Nasyonal','foot.c2.3':'Tradisyon Vodou','foot.c2.4':'Laprès',
+    'foot.c3h':'Sipò','foot.c3.1':'Kontakte nou','foot.c3.2':'Livrezon','foot.c3.3':'Retounen','foot.c3.4':'FAQ',
+    'foot.copy':'© 2025 Lakou Ati · LavimiyòLLC. Tout dwa rezève. · Fèt ak ❤️ pou dyaspora ayisyen an.',
+    'cart.title':'Panye Mwen','cart.empty':'Panye ou vid','cart.sub':'Sou-total','cart.ship':'Livrezon','cart.free':'Gratis','cart.total':'Total','cart.checkout':'Pase Kòmand →',
+    'toast':'ajoute nan panye!',
+    'strip':['Pwodwi Sakre','✦','Beni pa Ati Nasyonal','✦','Livrezon Mondyal','✦','Koleksyon Bitasyon','✦','100% Otantik','✦','Lakou Ati','✦'],
+  },
+  en: {
+    'topbar.tag': 'Sacred Spiritual Goods — Blessed by Haiti\'s Ati National',
+    'nav.products':'Products','nav.story':'Our Story','nav.ati':'The Ati National','nav.reviews':'Reviews','nav.cart':'Cart',
+    'hero.kicker':'✦ Authentic Haitian Spiritual Goods',
+    'hero.line1':'The','hero.line2':'Sacred','hero.line3':'Yard',
+    'hero.desc':'Every product personally blessed by Carl Henry Desmornes, Ati National of Haiti — the only person on earth with this spiritual authority.',
+    'hero.cta':'Explore Our Collection',
+    'products.h1':'Sacred','products.h2':'Collection','products.kicker':'Artisanal Selection',
+    'badge.new':'New','badge.hot':'🔥 Popular','badge.bs':'Best Seller',
+    'p.unit':'','p.add':'+ Add','p.added':'✓ Added',
+    'feat.1.t':'Personally Blessed','feat.1.d':'The Ati National blesses each product before shipment — a sacred ceremony, not a marketing claim.',
+    'feat.2.t':'Haitian Authority','feat.2.d':'No other brand in the world can offer products blessed by the supreme spiritual authority of Haitian Vodou.',
+    'feat.3.t':'Global Delivery','feat.3.d':'Shipped from Miami to the Haitian diaspora across four continents.',
+    'feat.4.t':'Authentic Guarantee','feat.4.d':'Each product bears the Lakou Ati ceremonial seal — the mark of the Ati National.',
+    'story.kicker':'Our Mission','story.title':'The Sacred <em>Lives</em> in Every Product',
+    'story.p1':'Lakou Ati — "the sacred yard" in Haitian Creole — is a space where Haitian Vodou tradition meets the modern world.',
+    'story.p2':'Carl Henry Desmornes, as Ati National, bears the responsibility of ensuring that every product that leaves our hands carries an authentic blessing.',
+    'story.p3':'This is never done in bulk. Each blessing is an individual spiritual act — passing through his hands, his prayers, his intention.',
+    'ati.seal':'Official\nBlessing','ati.ribbon':'Ati National · Haiti',
+    'ati.kicker':'Authentic Guarantee',
+    'ati.tag':'✦ Ati National · Highest Spiritual Authority in Haitian Vodou',
+    'ati.bio1':'Carl Henry Desmornes holds the title of Ati National of Haiti — the supreme spiritual authority of the Haitian Vodou tradition. No other living person holds this position.',
+    'ati.bio2':'Every Lakou Ati product passes through his hands in a sacred ceremony before it is packaged and shipped. This is not a marketing claim — it is a genuine spiritual act.',
+    'ati.quote':'"This blessing is not performed in bulk. Each product passes through my hands, my prayers, my intention. It carries that with it — wherever it goes in the world."',
+    'ati.s1':'Ati National in the world','ati.s2':'Sacred products','ati.s3':'Blessed before shipment',
+    'rev.h1':'They','rev.h2':'Trust Us','rev.kicker':'Verified Reviews',
+    'rev.1.t':'The blessed oil is an extraordinary product. Since I received it, I feel a real protection. I never believed in such products but this one is different.',
+    'rev.2.t':'The candles are beautiful and burn for a long time. The knowledge that the Ati National personally blessed them gives them a value that cannot be bought.',
+    'rev.3.t':'I ordered the prayer papers for my family ceremony. The customer service was exceptional. Thank you Lakou Ati!',
+    'foot.tag':'Sacred spiritual goods, blessed with love, delivered to your door. Haitian tradition, everywhere in the world.',
+    'foot.c1h':'Shop','foot.c1.1':'All products','foot.c1.2':'Bitasyon collection','foot.c1.3':'Ceremonial packages','foot.c1.4':'Limited editions',
+    'foot.c2h':'Information','foot.c2.1':'Our story','foot.c2.2':'The Ati National','foot.c2.3':'Vodou tradition','foot.c2.4':'Press',
+    'foot.c3h':'Support','foot.c3.1':'Contact us','foot.c3.2':'Shipping','foot.c3.3':'Returns','foot.c3.4':'FAQ',
+    'foot.copy':'© 2025 Lakou Ati · LavimiyòLLC. All rights reserved. · Made with ❤️ for the Haitian diaspora.',
+    'cart.title':'My Cart','cart.empty':'Your cart is empty','cart.sub':'Subtotal','cart.ship':'Shipping','cart.free':'Free','cart.total':'Total','cart.checkout':'Checkout →',
+    'toast':'added to cart!',
+    'strip':['Sacred Goods','✦','Blessed by the Ati National','✦','Global Delivery','✦','Bitasyon Collection','✦','100% Authentic','✦','Lakou Ati','✦'],
+  }
+};
+
+const PRODUCTS = [
+  { id:1, name:'Lwil Beni', sub_ht:'Lwil Espirityèl Sakre', sub_en:'Blessed Sacred Oils', price:18.99, badge:'bs', brand:'bitasyon', symbol:'◉', desc_ht:'Lwil botanik beni espirityèlman pou pwoteksyon, gerizon ak travay rityèl. Beni pèsonèlman pa Ati Nasyonal.', desc_en:'Spiritually infused botanical oils for protection, healing, and ritual work. Personally blessed by the Ati National.' },
+  { id:2, name:'Dlo Espirityèl', sub_ht:'Dlo Pou Sèremoni', sub_en:'Spiritual Waters', price:16.99, badge:'', brand:'bitasyon', symbol:'≋', desc_ht:'Dlo sakre pou sèremoni netwayaj, ofrann lotèl ak ben espirityèl. Beni ak sakre ak priyè.', desc_en:'Sacred waters for cleansing ceremonies, altar offerings, and spiritual baths. Blessed and consecrated with prayer.' },
+  { id:3, name:'Bougies Beni', sub_ht:'Bouji Sèremonyèl', sub_en:'Blessed Candles', price:14.99, badge:'bs', brand:'bitasyon', symbol:'△', desc_ht:'Bouji sèremonyèl pou priyè, meditasyon ak travay espirityèl. Chak flanm pote entansyon Ati a.', desc_en:'Ceremonial candles for prayer, meditation, and spiritual work. Each flame carries the Ati\'s intention.' },
+  { id:4, name:'Pafen Sakre', sub_ht:'Pafen Rityèl', sub_en:'Sacred Perfumes', price:22.99, badge:'new', brand:'bitasyon', symbol:'✿', desc_ht:'Pafen rityèl fèt ak pwodwi botanik ayisyen. Pote pou pwoteksyon espirityèl, atraksyon ak sèremoni.', desc_en:'Ritual fragrances crafted from Haitian botanical ingredients. Worn for spiritual protection, attraction, and ceremony.' },
+  { id:5, name:'Fishu ak Foulà', sub_ht:'Vètman Sèremonyèl', sub_en:'Ceremonial Wraps', price:29.99, badge:'', brand:'lakou-ati', symbol:'✦', desc_ht:'Fishu ak foulà sèremonyèl ayisyen pou rityèl Vodou, selebrasyon ak kostim sakre. Fèt a la men epi beni.', desc_en:'Traditional Haitian ceremonial head wraps and sashes for Vodou rituals, celebrations, and sacred dress. Handcrafted and blessed.' },
+  { id:6, name:'Papye Pou Priye', sub_ht:'Papye Sakre', sub_en:'Prayer & Wishing Paper', price:9.99, badge:'new', brand:'bitasyon', symbol:'✎', desc_ht:'Papye sakre pou ekri priyè, entansyon ak dezi. Itilize nan lotèl, sèremoni flanm ak ofrann pou Lwa yo.', desc_en:'Sacred paper for writing prayers, intentions, and wishes. Used in altars, flame ceremonies, and offerings to the Lwa.' },
+];
+
+let cart = [], lang = 'ht';
+
+function t(k) { return (T[lang]||T.ht)[k] || k; }
+
+function setLang(l) {
+  lang = l;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent === (l==='ht'?'KR':'EN')));
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.dataset.i18n, v = t(k);
+    if (k === 'story.title') el.innerHTML = v; else el.textContent = v;
   });
+  renderProducts(); renderStrip(); updateCartUI();
+}
+
+function renderStrip() {
+  const items = t('strip'); const s = items.map(i=>`<span>${i}</span>`).join('');
+  document.getElementById('strip-inner').innerHTML = s+s;
+}
+
+function renderProducts() {
+  const g = document.getElementById('product-grid');
+  g.innerHTML = PRODUCTS.map(p => {
+    const badgeMap = {'new':'badge-new','hot':'badge-hot','bs':'badge-bs'};
+    const badgeLabel = p.badge ? `<div class="product-badge ${badgeMap[p.badge]||''}">${t('badge.'+p.badge)}</div>` : '';
+    const brandTag = p.brand === 'bitasyon'
+      ? `<div class="product-brand-row"><img src="images/bitasyon.png" style="height:28px;object-fit:contain;opacity:0.85;"><span class="product-brand-tag">Bitasyon</span></div>`
+      : `<div class="product-brand-row"><img src="images/lakou-ati-logo.png" style="height:24px;object-fit:contain;opacity:0.7;"><span class="product-brand-tag">Lakou Ati</span></div>`;
+    return `<div class="product-card">
+      <div class="product-img">
+        <span class="product-img-symbol">${p.symbol}</span>
+        ${p.brand==='bitasyon'?'<img class="product-img-brand" src="images/bitasyon.png" alt="Bitasyon">':'<img class="product-img-brand" src="images/lakou-ati-logo.png" alt="Lakou Ati">'}
+        ${badgeLabel}
+      </div>
+      <div class="product-body">
+        ${brandTag}
+        <div class="product-name">${p.name}</div>
+        <div class="product-sub">${lang==='ht'?p.sub_ht:p.sub_en}</div>
+        <div class="product-desc">${lang==='ht'?p.desc_ht:p.desc_en}</div>
+        <div class="product-footer">
+          <div class="product-price">$${p.price.toFixed(2)} <small>${t('p.unit')}</small></div>
+          <button class="add-btn" id="btn-${p.id}" onclick="addToCart(${p.id})">${t('p.add')}</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  const tiles = document.getElementById('product-tiles');
+  if (tiles) tiles.innerHTML = PRODUCTS.map(p => `
+    <div class="product-tile" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+      <span class="tile-symbol">${p.symbol}</span>
+      <span class="tile-name">${p.name}</span>
+      <span class="tile-sub">${lang==='ht'?p.sub_ht:p.sub_en}</span>
+    </div>`).join('');
+}
+
+function addToCart(id) {
+  const p = PRODUCTS.find(x=>x.id===id);
+  const ex = cart.find(x=>x.id===id);
+  if (ex) ex.qty++; else cart.push({...p, qty:1});
+  updateCartUI();
+  const btn = document.getElementById('btn-'+id);
+  btn.textContent = t('p.added'); btn.classList.add('added');
+  setTimeout(()=>{ btn.textContent=t('p.add'); btn.classList.remove('added'); }, 1500);
+  showToast(p.name + ' ' + t('toast'));
+}
+
+function showToast(msg) {
+  const el = document.getElementById('toast'); el.textContent = msg; el.classList.add('show');
+  setTimeout(()=>el.classList.remove('show'), 2500);
+}
+
+function toggleCart() {
+  document.getElementById('cart-overlay').classList.toggle('open');
+  document.getElementById('cart-panel').classList.toggle('open');
+}
+
+function updateCartUI() {
+  const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
+  document.getElementById('cart-count').textContent = cart.reduce((s,i)=>s+i.qty,0);
+  document.getElementById('cart-title-el').textContent = t('cart.title');
+  document.getElementById('cart-empty-el').textContent = t('cart.empty');
+  document.getElementById('cart-sub-label').textContent = t('cart.sub');
+  document.getElementById('cart-ship-label').textContent = t('cart.ship');
+  document.getElementById('cart-free-label').textContent = t('cart.free');
+  document.getElementById('cart-total-label').textContent = t('cart.total');
+  document.getElementById('cart-sub-val').textContent = '$'+total.toFixed(2);
+  document.getElementById('cart-total-val').textContent = '$'+total.toFixed(2);
+  document.getElementById('checkout-btn-el').textContent = t('cart.checkout');
+  const list = document.getElementById('cart-items-list');
+  const footer = document.getElementById('cart-footer');
+  if (cart.length === 0) {
+    list.innerHTML = `<div class="cart-empty"><span>✦</span><p>${t('cart.empty')}</p></div>`;
+    footer.style.display = 'none';
+  } else {
+    footer.style.display = 'block';
+    list.innerHTML = cart.map(i=>`
+      <div class="cart-item">
+        <div class="cart-item-icon">${i.symbol}</div>
+        <div class="cart-item-info">
+          <div class="cart-item-name">${i.name}</div>
+          <div class="cart-item-qty">
+            <button class="qty-btn" onclick="changeQty(${i.id},-1)">−</button>
+            <span class="qty-num">${i.qty}</span>
+            <button class="qty-btn" onclick="changeQty(${i.id},1)">+</button>
+          </div>
+        </div>
+        <span class="cart-item-price">$${(i.price*i.qty).toFixed(2)}</span>
+        <button class="remove-item" onclick="removeFromCart(${i.id})">✕</button>
+      </div>`).join('');
+  }
+}
+
+function changeQty(id, d) {
+  const i = cart.find(x=>x.id===id);
+  if (!i) return;
+  i.qty += d;
+  if (i.qty <= 0) cart = cart.filter(x=>x.id!==id);
+  updateCartUI();
+}
+
+function removeFromCart(id) { cart = cart.filter(x=>x.id!==id); updateCartUI(); }
+
+function toggleMobileMenu() {
+  document.getElementById('mobile-menu').classList.toggle('open');
+  document.getElementById('hamburger').classList.toggle('open');
+}
+
+document.addEventListener('DOMContentLoaded', () => { setLang('ht'); });
 </script>
 </body>
 </html>
