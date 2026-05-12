@@ -72,9 +72,9 @@
   .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
   .product-card { background: var(--noir-mid); border: 1px solid var(--or-border); overflow: hidden; transition: transform 0.25s, box-shadow 0.25s, border-color 0.3s; }
   .product-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(212,168,67,0.1); border-color: rgba(212,168,67,0.4); }
-  .product-img { height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; background: #12100B; position: relative; }
-  .product-img-symbol { font-size: 3.5rem; color: var(--or); opacity: 0.5; }
-  .product-img-brand { height: 48px; object-fit: contain; opacity: 0.85; }
+  .product-img { height: 260px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; background: #12100B; position: relative; }
+  .product-img-symbol { font-size: 2.5rem; color: var(--or); opacity: 0.4; }
+  .product-img-brand { height: 140px; object-fit: contain; opacity: 1; }
   .product-badge { position: absolute; top: 0.75rem; right: 0.75rem; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; padding: 0.25rem 0.6rem; }
   .badge-new { background: var(--or); color: var(--noir); }
   .badge-hot { background: #C0392B; color: #fff; }
@@ -529,8 +529,8 @@ function renderProducts() {
     const badgeMap = {'new':'badge-new','hot':'badge-hot','bs':'badge-bs'};
     const badgeLabel = p.badge ? `<div class="product-badge ${badgeMap[p.badge]||''}">${t('badge.'+p.badge)}</div>` : '';
     const brandTag = p.brand === 'bitasyon'
-      ? `<div class="product-brand-row"><img src="images/bitasyon.png" style="height:28px;object-fit:contain;opacity:0.85;"><span class="product-brand-tag">Bitasyon</span></div>`
-      : `<div class="product-brand-row"><img src="images/lakou-ati-logo.png" style="height:24px;object-fit:contain;opacity:0.7;"><span class="product-brand-tag">Lakou Ati</span></div>`;
+      ? `<div class="product-brand-row"><img src="images/bitasyon.png" style="height:44px;object-fit:contain;opacity:1;border-radius:3px;"><span class="product-brand-tag">Bitasyon</span></div>`
+      : `<div class="product-brand-row"><img src="images/lakou-ati-logo.png" style="height:24px;object-fit:contain;opacity:0.7;filter:brightness(0) invert(1);"><span class="product-brand-tag">Lakou Ati</span></div>`;
     return `<div class="product-card">
       <div class="product-img">
         <span class="product-img-symbol">${p.symbol}</span>
