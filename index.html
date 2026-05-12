@@ -79,6 +79,7 @@
   .badge-new { background: var(--or); color: var(--noir); }
   .badge-hot { background: #C0392B; color: #fff; }
   .badge-bs { background: rgba(212,168,67,0.2); color: var(--or); border: 1px solid var(--or-border); }
+  .badge-partner { background: rgba(255,255,255,0.08); color: var(--cream); border: 1px solid rgba(255,255,255,0.18); }
   .product-body { padding: 1.25rem; }
   .product-brand-row { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
   .product-brand-tag { font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--or); opacity: 0.6; font-weight: 600; }
@@ -427,7 +428,7 @@ const T = {
     'hero.desc':'Chak pwodwi beni pèsonèlman pa Carl Henry Desmornes, Ati Nasyonal Ayiti — sèl moun sou latè ki genyen otorite sa a.',
     'hero.cta':'Dekouvri Koleksyon Nou',
     'products.h1':'Pwodwi','products.h2':'Sakre Nou Yo','products.kicker':'Koleksyon Beni',
-    'badge.new':'Nouvo','badge.hot':'🔥 Pi Renmen','badge.bs':'Pi Vann',
+    'badge.new':'Nouvo','badge.hot':'🔥 Pi Renmen','badge.bs':'Pi Vann','badge.partner':'✦ Patnè',
     'p.unit':'','p.add':'+ Ajoute','p.added':'✓ Ajoute',
     'feat.1.t':'Beni Pèsonèlman','feat.1.d':'Ati Nasyonal beni chak pwodwi anvan ekspedisyon — yon sèremoni sakre, pa yon deklarasyon maketing.',
     'feat.2.t':'Otorite Ayisyen','feat.2.d':'Okenn lòt mak nan mond lan pa ka ofri pwodwi ki beni pa otorite espirityèl ki pi wo nan Vodou Ayisyen.',
@@ -465,7 +466,7 @@ const T = {
     'hero.desc':'Every product personally blessed by Carl Henry Desmornes, Ati National of Haiti — the only person on earth with this spiritual authority.',
     'hero.cta':'Explore Our Collection',
     'products.h1':'Sacred','products.h2':'Collection','products.kicker':'Artisanal Selection',
-    'badge.new':'New','badge.hot':'🔥 Popular','badge.bs':'Best Seller',
+    'badge.new':'New','badge.hot':'🔥 Popular','badge.bs':'Best Seller','badge.partner':'✦ Partner',
     'p.unit':'','p.add':'+ Add','p.added':'✓ Added',
     'feat.1.t':'Personally Blessed','feat.1.d':'The Ati National blesses each product before shipment — a sacred ceremony, not a marketing claim.',
     'feat.2.t':'Haitian Authority','feat.2.d':'No other brand in the world can offer products blessed by the supreme spiritual authority of Haitian Vodou.',
@@ -504,7 +505,7 @@ const PRODUCTS = [
   { id:4, name:'Pafen Sakre', img:'pafen bitasyon.png', sub_ht:'Pafen Rityèl', sub_en:'Sacred Perfumes', price:22.99, badge:'new', brand:'bitasyon', symbol:'✿', desc_ht:'Pafen rityèl fèt ak pwodwi botanik ayisyen. Pote pou pwoteksyon espirityèl, atraksyon ak sèremoni.', desc_en:'Ritual fragrances crafted from Haitian botanical ingredients. Worn for spiritual protection, attraction, and ceremony.' },
   { id:5, name:'Poud Sakre', img:'poud sakre.png', sub_ht:'Poud Rityèl', sub_en:'Sacred Powder', price:14.99, badge:'new', brand:'bitasyon', symbol:'✦', desc_ht:'Poud sakre pou pwoteksyon, atire chans ak travay espirityèl. Beni ak sakre pa Ati Nasyonal.', desc_en:'Sacred powder for protection, attracting luck, and spiritual work. Blessed and consecrated by the Ati National.' },
   { id:6, name:'Wonm Sakre', img:'wonm sakre.png', sub_ht:'Wonm Espirityèl', sub_en:'Sacred Rum', price:24.99, badge:'', brand:'bitasyon', symbol:'⊕', desc_ht:'Wonm sakre pou ofrann, sèremoni ak rityèl espirityèl. Beni pèsonèlman pa Ati Nasyonal anvan ekspedisyon.', desc_en:'Sacred rum for offerings, ceremonies, and spiritual rituals. Personally blessed by the Ati National before shipment.' },
-  { id:7, name:'Fishu ak Foulà', img:'foula.png', sub_ht:'Vètman Sèremonyèl', sub_en:'Ceremonial Wraps', price:34.99, badge:'', brand:'lakou-ati', symbol:'✦', desc_ht:'Fishu ak foulà sèremonyèl ayisyen pou rityèl Vodou, selebrasyon ak kostim sakre. Fèt a la men epi beni.', desc_en:'Traditional Haitian ceremonial head wraps and sashes for Vodou rituals, celebrations, and sacred dress. Handcrafted and blessed.' },
+  { id:7, name:'Fishu ak Foulà', img:'foula.png', sub_ht:'Vètman Sèremonyèl', sub_en:'Ceremonial Wraps', price:34.99, badge:'partner', brand:'lakou-ati', supplier:'lokalayiti.com', symbol:'✦', desc_ht:'Fishu ak foulà sèremonyèl ki soti dirèkteman nan Ayiti lokal. Fèt a la men pa atizan ayisyen epi beni pou rityèl Vodou, selebrasyon ak kostim sakre.', desc_en:'Ceremonial head wraps and sashes sourced directly from local Haiti. Handcrafted by Haitian artisans and blessed for Vodou rituals, celebrations, and sacred dress.' },
   { id:8, name:'Papye Pou Priye', img:'papye sakre.png', sub_ht:'Papye Sakre', sub_en:'Prayer & Wishing Paper', price:9.99, badge:'new', brand:'bitasyon', symbol:'✎', desc_ht:'Papye sakre pou ekri priyè, entansyon ak dezi. Itilize nan lotèl, sèremoni flanm ak ofrann pou Lwa yo.', desc_en:'Sacred paper for writing prayers, intentions, and wishes. Used in altars, flame ceremonies, and offerings to the Lwa.' },
 ];
 
@@ -530,7 +531,7 @@ function renderStrip() {
 function renderProducts() {
   const g = document.getElementById('product-grid');
   g.innerHTML = PRODUCTS.map(p => {
-    const badgeMap = {'new':'badge-new','hot':'badge-hot','bs':'badge-bs'};
+    const badgeMap = {'new':'badge-new','hot':'badge-hot','bs':'badge-bs','partner':'badge-partner'};
     const badgeLabel = p.badge ? `<div class="product-badge ${badgeMap[p.badge]||''}">${t('badge.'+p.badge)}</div>` : '';
     const brandTag = p.brand === 'bitasyon'
       ? `<div class="product-brand-row"><img src="images/bitasyon-logo.png" style="height:44px;object-fit:contain;opacity:1;border-radius:3px;"><span class="product-brand-tag">Bitasyon</span></div>`
@@ -548,6 +549,7 @@ function renderProducts() {
         <div class="product-name">${p.name}</div>
         <div class="product-sub">${lang==='ht'?p.sub_ht:p.sub_en}</div>
         <div class="product-desc">${lang==='ht'?p.desc_ht:p.desc_en}</div>
+        ${p.supplier?`<a href="https://${p.supplier}" target="_blank" rel="noopener" style="font-size:0.7rem;color:var(--or);opacity:0.7;letter-spacing:0.1em;text-decoration:none;display:block;margin-bottom:0.75rem;">↗ ${p.supplier}</a>`:''}
         <div class="product-footer">
           <div class="product-price">$${p.price.toFixed(2)} <small>${t('p.unit')}</small></div>
           <button class="add-btn" id="btn-${p.id}" onclick="addToCart(${p.id})">${t('p.add')}</button>
