@@ -515,7 +515,7 @@ const PRODUCTS = [
   { id:8, name:'Papye Pou Priye', img:'papye sakre.png', sub_ht:'Papye Sakre', sub_en:'Prayer & Wishing Paper', price:9.99, badge:'new', brand:'bitasyon', symbol:'✎', desc_ht:'Papye sakre pou ekri priyè, entansyon ak dezi. Itilize nan lotèl, sèremoni flanm ak ofrann pou Lwa yo.', desc_en:'Sacred paper for writing prayers, intentions, and wishes. Used in altars, flame ceremonies, and offerings to the Lwa.' },
 ];
 
-let cart = [], lang = 'ht';
+let cart = JSON.parse(localStorage.getItem('lakouati_cart')||'[]'), lang = 'ht';
 
 function t(k) { return (T[lang]||T.ht)[k] || k; }
 
@@ -588,6 +588,7 @@ function toggleCart() {
 }
 
 function updateCartUI() {
+  localStorage.setItem('lakouati_cart', JSON.stringify(cart));
   const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
   document.getElementById('cart-count').textContent = cart.reduce((s,i)=>s+i.qty,0);
   document.getElementById('cart-title-el').textContent = t('cart.title');
