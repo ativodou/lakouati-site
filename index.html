@@ -56,7 +56,7 @@
   .hero-desc { font-size: 0.95rem; font-weight: 300; color: var(--cream-dim); line-height: 1.85; margin-bottom: 2.5rem; max-width: 420px; }
   .hero-cta { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--or); color: var(--noir); border: none; border-radius: 2rem; padding: 0.85rem 2rem; font-family: 'Jost', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; }
   .hero-cta:hover { background: var(--or-light); transform: translateY(-2px); }
-  .hero-right { display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 1fr); }
+  .hero-right { overflow: hidden; }
   .product-tile { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; cursor: pointer; transition: background 0.25s; border: 1px solid rgba(212,168,67,0.08); }
   .product-tile:hover { background: rgba(212,168,67,0.06); }
   .tile-symbol { font-size: 2.5rem; color: var(--or); opacity: 0.6; }
@@ -316,7 +316,9 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:15px;height:15px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </button>
   </div>
-  <div class="hero-right" id="product-tiles"></div>
+  <div class="hero-right">
+    <img src="images/lakou%20sakre.png" alt="Lakou Sakre" style="width:100%;height:100%;object-fit:cover;display:block;">
+  </div>
 </section>
 
 <!-- PRODUCTS -->
@@ -422,13 +424,13 @@ const T = {
     'nav.products':'Pwodwi','nav.story':'Istwa Nou','nav.ati':'Ati Nasyonal','nav.reviews':'Opinyon','nav.cart':'Panye',
     'hero.kicker':'✦ Pwodwi Espirityèl Otantik',
     'hero.line1':'Lakou','hero.line2':'Sakre','hero.line3':'a',
-    'hero.desc':'Chak pwodwi beni pèsonèlman pa Carl Henry Desmornes, Ati Nasyonal Ayiti — sèl moun sou latè ki genyen otoritay sa a.',
+    'hero.desc':'Chak pwodwi beni pèsonèlman pa Carl Henry Desmornes, Ati Nasyonal Ayiti — sèl moun sou latè ki genyen otorite sa a.',
     'hero.cta':'Dekouvri Koleksyon Nou',
     'products.h1':'Pwodwi','products.h2':'Sakre Nou Yo','products.kicker':'Koleksyon Beni',
     'badge.new':'Nouvo','badge.hot':'🔥 Pi Renmen','badge.bs':'Pi Vann',
     'p.unit':'','p.add':'+ Ajoute','p.added':'✓ Ajoute',
     'feat.1.t':'Beni Pèsonèlman','feat.1.d':'Ati Nasyonal beni chak pwodwi anvan ekspedisyon — yon sèremoni sakre, pa yon deklarasyon maketing.',
-    'feat.2.t':'Otoritay Ayisyen','feat.2.d':'Okenn lòt mak nan mond lan pa ka ofri pwodwi ki beni pa otoritay espirityèl ki pi wo nan Vodou Ayisyen.',
+    'feat.2.t':'Otorite Ayisyen','feat.2.d':'Okenn lòt mak nan mond lan pa ka ofri pwodwi ki beni pa otorite espirityèl ki pi wo nan Vodou Ayisyen.',
     'feat.3.t':'Livrezon Mondyal','feat.3.d':'Ekspedisyon depi Miami pou dyaspora ayisyen an atravè kat kontinan.',
     'feat.4.t':'Garanti Otantik','feat.4.d':'Chak pwodwi pote sèl sèremonyèl Lakou Ati — mak Ati Nasyonal a.',
     'story.kicker':'Misyon Nou','story.title':'Sakre a <em>viv</em> nan chak pwodwi',
@@ -437,14 +439,14 @@ const T = {
     'story.p3':'Sa pa janm fèt an gwo kantite. Chak beni se yon akto espirityèl endividyèl — li pase nan men li, nan priyè li, nan entansyon li.',
     'ati.seal':'Beni\nOfisyèl','ati.ribbon':'Ati Nasyonal · Ayiti',
     'ati.kicker':'Garanti Otantik',
-    'ati.tag':'✦ Ati Nasyonal · Otoritay Espirityèl Ki Pi Wo Nan Vodou Ayisyen',
-    'ati.bio1':'Carl Henry Desmornes pote tit Ati Nasyonal Ayiti — sòm otoritay espirityèl tradisyon Vodou Ayisyen. Okenn lòt moun vivan pa kenbe pozisyon sa a.',
+    'ati.tag':'✦ Ati Nasyonal · Otorite Espirityèl Ki Pi Wo Nan Vodou Ayisyen',
+    'ati.bio1':'Carl Henry Desmornes pote tit Ati Nasyonal Ayiti — sòm otorite espirityèl tradisyon Vodou Ayisyen. Okenn lòt moun vivan pa kenbe pozisyon sa a.',
     'ati.bio2':'Chak pwodwi Lakou Ati pase anba men li nan yon sèremoni sakre anvan li pakèje epi ekspedye. Sa pa yon pwomès maketing — se yon akto espirityèl reyèl.',
     'ati.quote':'« Benediksyon sa a pa fèt an gwo. Chak pwodwi pase nan men mwen, nan priyè mwen, nan entansyon mwen. Li pote sa ak li — kèlkeswa kote li ale nan mond lan. »',
     'ati.s1':'Ati Nasyonal nan mond lan','ati.s2':'Pwodwi sakre','ati.s3':'Beni anvan ekspedisyon',
     'rev.h1':'Yo','rev.h2':'Fè Konfyans Nou','rev.kicker':'Opinyon Verifye',
     'rev.1.t':'Lwil beni an se yon pwodwi ekstraòdinè. Depi m te resevwa li, mwen santi yon pwoteksyon reyèl. M pa janm kwè nan pwodwi konsa men sa a diferan.',
-    'rev.2.t':'Bougies yo bele anpil epi yo brile pou lontan. Konesans ke Ati Nasyonal beni yo pèsonèlman ba yo yon valè ki pa ka achte.',
+    'rev.2.t':'Bouji yo bele anpil epi yo brile pou lontan. Konesans ke Ati Nasyonal beni yo pèsonèlman ba yo yon valè ki pa ka achte.',
     'rev.3.t':'M te kòmande papye pou priye yo pou seremoni lafanmi mwen. Kliyan sèvis la te eksepsyonèl. Mèsi Lakou Ati!',
     'foot.tag':'Pwodwi espirityèl sakre, beni ak lanmou, livre nan pòt ou. Tradisyon Ayiti, tout kote nan mond lan.',
     'foot.c1h':'Boutik','foot.c1.1':'Tout pwodwi','foot.c1.2':'Koleksyon Bitasyon','foot.c1.3':'Pakèj sèremonyèl','foot.c1.4':'Edisyon limite',
@@ -496,12 +498,14 @@ const T = {
 };
 
 const PRODUCTS = [
-  { id:1, name:'Lwil Beni', sub_ht:'Lwil Espirityèl Sakre', sub_en:'Blessed Sacred Oils', price:18.99, badge:'bs', brand:'bitasyon', symbol:'◉', desc_ht:'Lwil botanik beni espirityèlman pou pwoteksyon, gerizon ak travay rityèl. Beni pèsonèlman pa Ati Nasyonal.', desc_en:'Spiritually infused botanical oils for protection, healing, and ritual work. Personally blessed by the Ati National.' },
-  { id:2, name:'Dlo Espirityèl', sub_ht:'Dlo Pou Sèremoni', sub_en:'Spiritual Waters', price:16.99, badge:'', brand:'bitasyon', symbol:'≋', desc_ht:'Dlo sakre pou sèremoni netwayaj, ofrann lotèl ak ben espirityèl. Beni ak sakre ak priyè.', desc_en:'Sacred waters for cleansing ceremonies, altar offerings, and spiritual baths. Blessed and consecrated with prayer.' },
-  { id:3, name:'Bougies Beni', sub_ht:'Bouji Sèremonyèl', sub_en:'Blessed Candles', price:14.99, badge:'bs', brand:'bitasyon', symbol:'△', desc_ht:'Bouji sèremonyèl pou priyè, meditasyon ak travay espirityèl. Chak flanm pote entansyon Ati a.', desc_en:'Ceremonial candles for prayer, meditation, and spiritual work. Each flame carries the Ati\'s intention.' },
-  { id:4, name:'Pafen Sakre', sub_ht:'Pafen Rityèl', sub_en:'Sacred Perfumes', price:22.99, badge:'new', brand:'bitasyon', symbol:'✿', desc_ht:'Pafen rityèl fèt ak pwodwi botanik ayisyen. Pote pou pwoteksyon espirityèl, atraksyon ak sèremoni.', desc_en:'Ritual fragrances crafted from Haitian botanical ingredients. Worn for spiritual protection, attraction, and ceremony.' },
-  { id:5, name:'Fishu ak Foulà', sub_ht:'Vètman Sèremonyèl', sub_en:'Ceremonial Wraps', price:29.99, badge:'', brand:'lakou-ati', symbol:'✦', desc_ht:'Fishu ak foulà sèremonyèl ayisyen pou rityèl Vodou, selebrasyon ak kostim sakre. Fèt a la men epi beni.', desc_en:'Traditional Haitian ceremonial head wraps and sashes for Vodou rituals, celebrations, and sacred dress. Handcrafted and blessed.' },
-  { id:6, name:'Papye Pou Priye', sub_ht:'Papye Sakre', sub_en:'Prayer & Wishing Paper', price:9.99, badge:'new', brand:'bitasyon', symbol:'✎', desc_ht:'Papye sakre pou ekri priyè, entansyon ak dezi. Itilize nan lotèl, sèremoni flanm ak ofrann pou Lwa yo.', desc_en:'Sacred paper for writing prayers, intentions, and wishes. Used in altars, flame ceremonies, and offerings to the Lwa.' },
+  { id:1, name:'Lwil Beni', img:'lwil sakre.png', sub_ht:'Lwil Espirityèl Sakre', sub_en:'Blessed Sacred Oils', price:18.99, badge:'bs', brand:'bitasyon', symbol:'◉', desc_ht:'Lwil botanik beni espirityèlman pou pwoteksyon, gerizon ak travay rityèl. Beni pèsonèlman pa Ati Nasyonal.', desc_en:'Spiritually infused botanical oils for protection, healing, and ritual work. Personally blessed by the Ati National.' },
+  { id:2, name:'Dlo Espirityèl', img:'dlo bitason.png', sub_ht:'Dlo Pou Sèremoni', sub_en:'Spiritual Waters', price:16.99, badge:'', brand:'bitasyon', symbol:'≋', desc_ht:'Dlo sakre pou sèremoni netwayaj, ofrann lotèl ak ben espirityèl. Beni ak sakre ak priyè.', desc_en:'Sacred waters for cleansing ceremonies, altar offerings, and spiritual baths. Blessed and consecrated with prayer.' },
+  { id:3, name:'Bouji Beni', img:'bouji bitasyon.png', sub_ht:'Bouji Sèremonyèl', sub_en:'Blessed Candles', price:14.99, badge:'bs', brand:'bitasyon', symbol:'△', desc_ht:'Bouji sèremonyèl pou priyè, meditasyon ak travay espirityèl. Chak flanm pote entansyon Ati a.', desc_en:'Ceremonial candles for prayer, meditation, and spiritual work. Each flame carries the Ati\'s intention.' },
+  { id:4, name:'Pafen Sakre', img:'pafen bitasyon.png', sub_ht:'Pafen Rityèl', sub_en:'Sacred Perfumes', price:22.99, badge:'new', brand:'bitasyon', symbol:'✿', desc_ht:'Pafen rityèl fèt ak pwodwi botanik ayisyen. Pote pou pwoteksyon espirityèl, atraksyon ak sèremoni.', desc_en:'Ritual fragrances crafted from Haitian botanical ingredients. Worn for spiritual protection, attraction, and ceremony.' },
+  { id:5, name:'Poud Sakre', img:'poud sakre.png', sub_ht:'Poud Rityèl', sub_en:'Sacred Powder', price:14.99, badge:'new', brand:'bitasyon', symbol:'✦', desc_ht:'Poud sakre pou pwoteksyon, atire chans ak travay espirityèl. Beni ak sakre pa Ati Nasyonal.', desc_en:'Sacred powder for protection, attracting luck, and spiritual work. Blessed and consecrated by the Ati National.' },
+  { id:6, name:'Wonm Sakre', img:'wonm sakre.png', sub_ht:'Wonm Espirityèl', sub_en:'Sacred Rum', price:24.99, badge:'', brand:'bitasyon', symbol:'⊕', desc_ht:'Wonm sakre pou ofrann, sèremoni ak rityèl espirityèl. Beni pèsonèlman pa Ati Nasyonal anvan ekspedisyon.', desc_en:'Sacred rum for offerings, ceremonies, and spiritual rituals. Personally blessed by the Ati National before shipment.' },
+  { id:7, name:'Fishu ak Foulà', img:'foula.png', sub_ht:'Vètman Sèremonyèl', sub_en:'Ceremonial Wraps', price:34.99, badge:'', brand:'lakou-ati', symbol:'✦', desc_ht:'Fishu ak foulà sèremonyèl ayisyen pou rityèl Vodou, selebrasyon ak kostim sakre. Fèt a la men epi beni.', desc_en:'Traditional Haitian ceremonial head wraps and sashes for Vodou rituals, celebrations, and sacred dress. Handcrafted and blessed.' },
+  { id:8, name:'Papye Pou Priye', img:'papye sakre.png', sub_ht:'Papye Sakre', sub_en:'Prayer & Wishing Paper', price:9.99, badge:'new', brand:'bitasyon', symbol:'✎', desc_ht:'Papye sakre pou ekri priyè, entansyon ak dezi. Itilize nan lotèl, sèremoni flanm ak ofrann pou Lwa yo.', desc_en:'Sacred paper for writing prayers, intentions, and wishes. Used in altars, flame ceremonies, and offerings to the Lwa.' },
 ];
 
 let cart = [], lang = 'ht';
@@ -532,9 +536,11 @@ function renderProducts() {
       ? `<div class="product-brand-row"><img src="images/bitasyon-logo.png" style="height:44px;object-fit:contain;opacity:1;border-radius:3px;"><span class="product-brand-tag">Bitasyon</span></div>`
       : `<div class="product-brand-row"><img src="images/lakou-ati-logo.png" style="height:24px;object-fit:contain;opacity:0.7;filter:brightness(0) invert(1);"><span class="product-brand-tag">Lakou Ati</span></div>`;
     return `<div class="product-card">
-      <div class="product-img">
-        <span class="product-img-symbol">${p.symbol}</span>
-        ${p.brand==='bitasyon'?'<img class="product-img-brand" src="images/bitasyon-logo.png" alt="Bitasyon">':'<img class="product-img-brand" src="images/lakou-ati-logo.png" alt="Lakou Ati">'}
+      <div class="product-img" style="${p.img?'background:#0D0B08;':''}">
+        ${p.img
+          ? `<img src="images/${p.img.replace(/ /g,'%20')}" alt="${p.name}" style="width:100%;height:100%;object-fit:contain;">`
+          : `<span class="product-img-symbol">${p.symbol}</span>${p.brand==='bitasyon'?'<img class="product-img-brand" src="images/bitasyon-logo.png" alt="Bitasyon">':'<img class="product-img-brand" src="images/lakou-ati-logo.png" alt="Lakou Ati">'}`
+        }
         ${badgeLabel}
       </div>
       <div class="product-body">
@@ -550,13 +556,6 @@ function renderProducts() {
     </div>`;
   }).join('');
 
-  const tiles = document.getElementById('product-tiles');
-  if (tiles) tiles.innerHTML = PRODUCTS.map(p => `
-    <div class="product-tile" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
-      <span class="tile-symbol">${p.symbol}</span>
-      <span class="tile-name">${p.name}</span>
-      <span class="tile-sub">${lang==='ht'?p.sub_ht:p.sub_en}</span>
-    </div>`).join('');
 }
 
 function addToCart(id) {
