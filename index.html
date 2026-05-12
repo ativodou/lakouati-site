@@ -20,6 +20,8 @@
   /* TOP BAR */
   .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 110; height: 34px; background: #0A0604; display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; border-bottom: 1px solid var(--or-border); }
   .topbar-tagline { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(212,168,67,0.45); }
+  .topbar-back { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(212,168,67,0.5); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; gap: 0.4rem; }
+  .topbar-back:hover { color: var(--or); }
   .lang-toggle { display: flex; align-items: center; background: rgba(212,168,67,0.07); border-radius: 2rem; border: 1px solid var(--or-border); overflow: hidden; }
   .lang-btn { padding: 0.25rem 0.8rem; cursor: pointer; border: none; background: none; color: rgba(253,248,240,0.4); font-family: 'Jost', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; transition: background 0.2s, color 0.2s; }
   .lang-btn.active { background: var(--or); color: var(--noir); border-radius: 2rem; }
@@ -248,7 +250,7 @@
 
 <!-- TOP BAR -->
 <div class="topbar">
-  <span class="topbar-tagline" id="topbar-tag"></span>
+  <a class="topbar-back" href="javascript:history.back()">← Boutik</a>
   <div class="lang-toggle">
     <button class="lang-btn active" onclick="setLang('ht')">KR</button>
     <button class="lang-btn" onclick="setLang('en')">EN</button>
