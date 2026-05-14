@@ -590,7 +590,6 @@ function updateCartUI() {
   const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
   document.getElementById('cart-count').textContent = cart.reduce((s,i)=>s+i.qty,0);
   document.getElementById('cart-title-el').textContent = t('cart.title');
-  document.getElementById('cart-empty-el').textContent = t('cart.empty');
   document.getElementById('cart-sub-label').textContent = t('cart.sub');
   document.getElementById('cart-ship-label').textContent = t('cart.ship');
   document.getElementById('cart-free-label').textContent = t('cart.free');
@@ -637,7 +636,7 @@ function toggleMobileMenu() {
   document.getElementById('hamburger').classList.toggle('open');
 }
 
-document.addEventListener('DOMContentLoaded', () => { setLang('ht'); updateCartUI(); });
+document.addEventListener('DOMContentLoaded', () => { setLang('ht'); });
 
 async function startCheckout() {
   const btn = document.getElementById('checkout-btn-el');
