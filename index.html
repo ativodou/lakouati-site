@@ -251,6 +251,18 @@
     .product-grid { grid-template-columns: 1fr; }
     .features-grid { grid-template-columns: 1fr; }
   }
+
+  /* TRADISYON ZANSET */
+  .tradisyon-section { background: var(--noir-mid); padding: 5rem; border-top: 1px solid var(--or-border); }
+  .tradisyon-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
+  .trad-card { background: var(--noir-light); border: 1px solid var(--or-border); border-radius: 2px; padding: 2rem; position: relative; }
+  .trad-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--or); }
+  .trad-sym { font-size: 1.8rem; margin-bottom: 1rem; display: block; }
+  .trad-name { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 700; color: var(--cream); margin-bottom: 0.25rem; line-height: 1.2; }
+  .trad-sub { font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--or); margin-bottom: 1rem; display: block; }
+  .trad-desc { font-size: 0.86rem; line-height: 1.85; color: var(--cream-dim); }
+  .trad-prod { margin-top: 1.2rem; padding-top: 0.9rem; border-top: 1px solid var(--or-border); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(212,168,67,0.5); }
+  @media (max-width: 768px) { .tradisyon-section { padding: 2.5rem 1.25rem; } .tradisyon-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -271,6 +283,7 @@
       <li><a href="#products" data-i18n="nav.products"></a></li>
       <li><a href="#story" data-i18n="nav.story"></a></li>
       <li><a href="#ati" data-i18n="nav.ati"></a></li>
+      <li><a href="#tradisyon" data-i18n="nav.tradisyon"></a></li>
       <li><a href="#testimonials" data-i18n="nav.reviews"></a></li>
     </ul>
   </div>
@@ -296,6 +309,7 @@
   <a href="#products" data-i18n="nav.products" onclick="toggleMobileMenu()"></a>
   <a href="#story" data-i18n="nav.story" onclick="toggleMobileMenu()"></a>
   <a href="#ati" data-i18n="nav.ati" onclick="toggleMobileMenu()"></a>
+  <a href="#tradisyon" data-i18n="nav.tradisyon" onclick="toggleMobileMenu()"></a>
   <a href="#testimonials" data-i18n="nav.reviews" onclick="toggleMobileMenu()"></a>
 </div>
 
@@ -379,6 +393,15 @@
   </div>
 </div>
 
+<!-- TRADISYON ZANSET -->
+<div class="tradisyon-section" id="tradisyon">
+  <div class="section-head">
+    <h2><span data-i18n="trad.h1"></span> <span class="accent" data-i18n="trad.h2"></span></h2>
+    <span class="section-kicker" data-i18n="trad.kicker"></span>
+  </div>
+  <div class="tradisyon-grid" id="tradisyon-grid"></div>
+</div>
+
 <!-- TESTIMONIALS -->
 <section class="testimonials" id="testimonials">
   <div class="section-head">
@@ -426,7 +449,7 @@
 const T = {
   ht: {
     'topbar.tag': 'Pwodwi Espirityèl Sakre — Beni pa Ati Nasyonal Ayiti',
-    'nav.products':'Pwodwi','nav.story':'Istwa Nou','nav.ati':'Ati Nasyonal','nav.reviews':'Opinyon','nav.cart':'Panye',
+    'nav.products':'Pwodwi','nav.story':'Istwa Nou','nav.ati':'Ati Nasyonal','nav.tradisyon':'Tradisyon','nav.reviews':'Opinyon','nav.cart':'Panye',
     'hero.kicker':'✦ Pwodwi Espirityèl Otantik',
     'hero.line1':'Lakou','hero.line2':'Sakre','hero.line3':'a',
     'hero.desc':'Chak pwodwi beni pèsonèlman pa Carl Henry Desmornes, Ati Nasyonal Ayiti — sèl moun sou latè ki genyen otorite sa a.',
@@ -461,10 +484,18 @@ const T = {
     'cart.title':'Panye Mwen','cart.empty':'Panye ou vid','cart.sub':'Sou-total','cart.ship':'Livrezon','cart.free':'Gratis','cart.total':'Total','cart.checkout':'Pase Kòmand →',
     'toast':'ajoute nan panye!',
     'strip':['Pwodwi Sakre','✦','Beni pa Ati Nasyonal','✦','Livrezon Mondyal','✦','Koleksyon Bitasyon','✦','100% Otantik','✦','Lakou Ati','✦'],
+    'trad.h1':'Tradisyon','trad.h2':'Zanset','trad.kicker':'Pratik & Rityèl Vodou Ayisyen',
+    'trad':[
+      {sym:'🕯️',name:'Bouji ak Lwa Yo',sub:'Sèremoni Flanm',desc:'Nan tradisyon Vodou, bouji reprezante limyè ki rele Lwa yo. Chak koulè pou yon Lwa espesifik — wouj pou Ogou, blan pou Danbala, ble pou Agwe. Pran bouji a nan men ou, di non Lwa ou vle kontakte, limen li ak priyè w.',prod:'Bouji Beni · Koleksyon Bitasyon'},
+      {sym:'✿',name:'Pafen Espirityèl',sub:'Pwoteksyon ak Atraksyon',desc:'Zansèt nou yo te itilize pafen sakre pou pwoteje kò yo ak atire bon enèji. Aplike sou pwen yo (pwanyèt, kòl, tanp) anvan sèremoni oubyen lè ou bezwen pwoteksyon espirityèl.',prod:'Pafen Sakre · Koleksyon Bitasyon'},
+      {sym:'✦',name:'Poud Pou Wout',sub:'Pwoteksyon Espas',desc:'Tradisyon mande anlè poud sakre sou wout ou anvan yon vwayaj long, oubyen nan sèy pòt ou pou pwoteje kay ou. Chak melanj gen yon pwopòsyon — kèk pou atire richès, lòt pou repouse move enèji.',prod:'Poud Sakre · Koleksyon Bitasyon'},
+      {sym:'⊕',name:'Ofrann Wonm pou Lwa',sub:'Libation ak Sèremoni',desc:'Wonm se bwason sakre nan Vodou Ayisyen. Li ofri sou altèl, vèsè sou tè kòm libation, oubyen plonje plim ladan li pou beni objè enpòtan. Ogou, Gede, ak Lwa Petwo yo renmen wonm espesyalman.',prod:'Wonm Sakre · Koleksyon Bitasyon'},
+      {sym:'✦',name:'Tete Tèt Sèremonyèl',sub:'Rara, Initiation ak Selebrasyon',desc:'Tisu ak foulà sèremonyèl pote siyifikasyon pwofon nan Vodou. Yo mare sou tèt pandan Rara, initiation Asogwe, ak fèt Lwa yo. Chak fason mare kreye yon vibrasyon diferan — kèk pou pwoteksyon, lòt pou kominike ak espri yo.',prod:'Tisu ak Foulà · Koleksyon Bitasyon'},
+    ],
   },
   en: {
     'topbar.tag': 'Sacred Spiritual Goods — Blessed by Haiti\'s Ati National',
-    'nav.products':'Products','nav.story':'Our Story','nav.ati':'The Ati National','nav.reviews':'Reviews','nav.cart':'Cart',
+    'nav.products':'Products','nav.story':'Our Story','nav.ati':'The Ati National','nav.tradisyon':'Traditions','nav.reviews':'Reviews','nav.cart':'Cart',
     'hero.kicker':'✦ Authentic Haitian Spiritual Goods',
     'hero.line1':'The','hero.line2':'Sacred','hero.line3':'Yard',
     'hero.desc':'Every product personally blessed by Carl Henry Desmornes, Ati National of Haiti — the only person on earth with this spiritual authority.',
@@ -499,6 +530,14 @@ const T = {
     'cart.title':'My Cart','cart.empty':'Your cart is empty','cart.sub':'Subtotal','cart.ship':'Shipping','cart.free':'Free','cart.total':'Total','cart.checkout':'Checkout →',
     'toast':'added to cart!',
     'strip':['Sacred Goods','✦','Blessed by the Ati National','✦','Global Delivery','✦','Bitasyon Collection','✦','100% Authentic','✦','Lakou Ati','✦'],
+    'trad.h1':'Ancestral','trad.h2':'Traditions','trad.kicker':'Haitian Vodou Rituals & Practices',
+    'trad':[
+      {sym:'🕯️',name:'Candles & the Lwa',sub:'Flame Ceremony',desc:'In Vodou tradition, candles represent the light that calls the Lwa. Each color belongs to a specific spirit — red for Ogou, white for Danbala, blue for Agwe. Hold the candle, speak the spirit\'s name, and light it with your prayer.',prod:'Bouji Beni · Bitasyon Collection'},
+      {sym:'✿',name:'Sacred Fragrance',sub:'Protection & Attraction',desc:'Our ancestors used sacred perfumes to protect their bodies and attract positive energy. Apply to pulse points (wrists, neck, temples) before a ceremony or whenever you need spiritual protection.',prod:'Pafen Sakre · Bitasyon Collection'},
+      {sym:'✦',name:'Powder of the Path',sub:'Space Protection',desc:'Tradition calls for sprinkling sacred powder on your path before a long journey, or at your threshold to protect your home. Each blend has a purpose — some to attract abundance, others to drive away negative energy.',prod:'Poud Sakre · Bitasyon Collection'},
+      {sym:'⊕',name:'Rum Offering for the Lwa',sub:'Libation & Ceremony',desc:'Rum is a sacred drink in Haitian Vodou. It is offered on altars, poured on the ground as libation, or used to anoint important objects. Ogou, Gede, and the Petwo Lwa especially favor rum as an offering.',prod:'Wonm Sakre · Bitasyon Collection'},
+      {sym:'✦',name:'Ceremonial Head Wrap',sub:'Rara, Initiation & Celebration',desc:'Ceremonial wraps carry deep spiritual meaning. They are tied during Rara, Asogwe initiation, and Lwa celebrations. Each way of tying creates a different vibration — some attract protection, others open communication with the spirits.',prod:'Tisu ak Foulà · Bitasyon Collection'},
+    ],
   }
 };
 
@@ -524,12 +563,24 @@ function setLang(l) {
     const k = el.dataset.i18n, v = t(k);
     if (k === 'story.title') el.innerHTML = v; else el.textContent = v;
   });
-  renderProducts(); renderStrip(); updateCartUI();
+  renderProducts(); renderStrip(); renderTradisyon(); updateCartUI();
 }
 
 function renderStrip() {
   const items = t('strip'); const s = items.map(i=>`<span>${i}</span>`).join('');
   document.getElementById('strip-inner').innerHTML = s+s;
+}
+
+function renderTradisyon() {
+  const items = (T[lang]||T.ht)['trad'] || [];
+  document.getElementById('tradisyon-grid').innerHTML = items.map(c => `
+    <div class="trad-card">
+      <span class="trad-sym">${c.sym}</span>
+      <div class="trad-name">${c.name}</div>
+      <span class="trad-sub">${c.sub}</span>
+      <p class="trad-desc">${c.desc}</p>
+      <div class="trad-prod">${c.prod}</div>
+    </div>`).join('');
 }
 
 function renderProducts() {
