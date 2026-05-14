@@ -416,6 +416,8 @@
     <div class="cart-sub-row"><span id="cart-ship-label"></span><span style="color:#2A5C3A;font-weight:600;" id="cart-free-label"></span></div>
     <div class="cart-total-row"><strong id="cart-total-label"></strong><span class="total-price" id="cart-total-val">$0.00</span></div>
     <button class="checkout-btn" id="checkout-btn-el" onclick="startCheckout()"></button>
+    <div style="text-align:center;font-size:0.72rem;color:var(--warm-gray);margin:0.5rem 0;letter-spacing:0.1em;">— oubyen —</div>
+    <button class="checkout-btn" id="moncash-btn-el" onclick="startMoncash()" style="background:#FFCB05;color:#1a1a1a;">📱 Peye ak MonCash</button>
   </div>
 </div>
 <div class="toast" id="toast"></div>
@@ -643,7 +645,7 @@ async function startCheckout() {
   btn.textContent = '⏳';
   try {
     const items = cart.map(i => ({ name: i.name, price: i.price, qty: i.qty }));
-    const res = await fetch('/api/checkout', {
+    const res = await fetch('/api/checkout/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -659,6 +661,25 @@ async function startCheckout() {
     alert('Erè: ' + err.message);
     btn.disabled = false;
     btn.textContent = t('cart.checkout');
+  }
+}
+
+async function startMoncash() {
+  const btn = document.getElementById('moncash-btn-el');
+  btn.disabled = true; btn.textContent = '⏳';
+  try {
+    const items = cart.map(i => ({ name: i.name, price: i.price, qty: i.qty }));
+    const res = await fetch('/api/moncash/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items }),
+    });
+    const data = await res.json();
+    if (data.url) { window.location.href = data.url; }
+    else throw new Error(data.error || 'MonCash failed');
+  } catch (err) {
+    alert('Erè MonCash: ' + err.message);
+    btn.disabled = false; btn.textContent = '📱 Peye ak MonCash';
   }
 }
 </script>
